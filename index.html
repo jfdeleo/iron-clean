@@ -36,6 +36,15 @@
 
 <div id="app">
     <navbar :items="navItems" :logo="logoSrc"></navbar>
+    <Banner :items="navItems" :logo="logoSrc"></Banner>
+    <card
+            :image-src="'./img/taza.png'"
+            image-alt="Servicio de hogar"
+            titulo="Hogar"
+            :items="['Limpieza de baños y cocinas.', 'Limpieza de habitaciones.', 'Lavado de ropa.']"
+            link="#hogar"
+            :imagen-derecha="true"
+    ></card>
     <contact-form destinatario="franco15deleo@gmail.com"></contact-form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
