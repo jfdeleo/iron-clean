@@ -4,6 +4,8 @@ import Navbar      from './navbar.js';
 import ContactForm from './ContactForm.js';
 import Banner from './Banner.js';
 import Card from './Cards.js';
+import Footer from './footer.js';
+import ContactFormConTexto from './ContactFormConTexto.js';
 
 const app = createApp({
   data() {
@@ -23,5 +25,8 @@ app.component('Navbar', Navbar);
 app.component('ContactForm', ContactForm);
 app.component('Banner', Banner);
 app.component('Card', Card);
+app.component('ic-footer', Footer);
+app.component('ContactFormConTexto', ContactFormConTexto);
+
 
 app.mount('#app');

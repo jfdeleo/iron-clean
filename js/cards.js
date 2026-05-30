@@ -169,9 +169,6 @@ export default {
         <ul class="hcard__list">
           <li v-for="(item, i) in items" :key="i">{{ item }}</li>
         </ul>
-        <a :href="link" class="hcard__link">
-          SABER MÁS <span class="hcard__link-arrow">→</span>
-        </a>
       </div>
 
       <div v-if="imagenDerecha" class="hcard__img-side">

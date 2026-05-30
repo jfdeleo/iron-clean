@@ -37,15 +37,38 @@
 <div id="app">
     <navbar :items="navItems" :logo="logoSrc"></navbar>
     <Banner :items="navItems" :logo="logoSrc"></Banner>
-    <card
-            :image-src="'./img/taza.png'"
-            image-alt="Servicio de hogar"
-            titulo="Hogar"
-            :items="['Limpieza de baños y cocinas.', 'Limpieza de habitaciones.', 'Lavado de ropa.']"
-            link="#hogar"
-            :imagen-derecha="true"
-    ></card>
-    <contact-form destinatario="franco15deleo@gmail.com"></contact-form>
+    <div >
+        <card
+                :image-src="'./img/taza.png'"
+                image-alt="Servicio de hogar"
+                titulo="Hogar"
+                :items="['Limpieza y desinfección de baños y cocinas.','Limpieza de habitaciones, salas y zonas comunes.','Servicio de limpieza de cocina básica y sencilla.','Recolección y depósito de basuras.','Lavado de ropa.','Planchado de ropa.']"
+                link="#hogar"
+                :imagen-derecha="true"
+        ></card>
+        <card
+                :image-src="'./img/propiedad-horizontal.png'"
+                image-alt="Servicio de hogar"
+                titulo="EMP​RESAS Y PROPIEDAD HORIZONTAL"
+                :items="['Limpieza y desinfección de baños','Limpieza de escritorios y mobiliarios',
+'Limpieza de pasillos , escaleras y espacios comunes.',
+'Limpieza de vidrios y paredes interiores.',
+'Recolección y depósito de basuras.']"
+                link="#hogar"
+                :imagen-derecha="false"
+        ></card>
+        <Contact-form-con-texto destinatario="franco15deleo@gmail.com"  texto="Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores."></Contact-form-con-texto>
+        <ic-footer
+                bgcolor="#0d1b2a"
+                color="#ffffff"
+                adelimg="./img/adel.png"
+                :redes="[
+                    { red: 'instagram', url: 'https://instagram.com/ironclean' },
+                    { red: 'facebook',  url: 'https://facebook.com/ironclean' },
+                    { red: 'whatsapp',  url: 'https://wa.me/5491151956458' }
+                  ]"
+        ></ic-footer>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
