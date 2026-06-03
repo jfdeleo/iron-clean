@@ -15,7 +15,6 @@ const footerStyles = `
     border-bottom: 1px solid rgba(255,255,255,0.12);
   }
 
-  /* Columna 1: marca */
   .ic-footer__brand-name {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
@@ -33,7 +32,6 @@ const footerStyles = `
     font-style: italic;
   }
 
-  /* Columna 2: contacto */
   .ic-footer__col-title {
     font-size: 0.7rem;
     font-weight: 700;
@@ -72,7 +70,6 @@ const footerStyles = `
     opacity: 0.6;
   }
 
-  /* Columna 3: redes */
   .ic-footer__social-list {
     display: flex;
     flex-wrap: wrap;
@@ -102,36 +99,13 @@ const footerStyles = `
     transform: translateY(-1px);
   }
 
-  /* Franja miembro ADEL */
-  .ic-footer__member {
+  .ic-footer__bottom {
+    padding-top: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    padding: 1.1rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-  }
-
-  .ic-footer__member-text {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    opacity: 0.65;
-    margin: 0;
-  }
-
-  .ic-footer__member-img {
-    height: 32px;
-    width: auto;
-    object-fit: contain;
-    opacity: 0.85;
-  }
-
-  /* Copyright */
-  .ic-footer__bottom {
-    padding-top: 1.2rem;
-    text-align: center;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .ic-footer__copy {
@@ -142,73 +116,79 @@ const footerStyles = `
     letter-spacing: 0.04em;
   }
 
-  /* Responsive */
+  .ic-footer__member {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .ic-footer__member-text {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ic-footer__member-img {
+    height: 4.5em;
+    width: 17em;
+    object-fit: contain;
+    opacity: 0.85;
+  }
+
   @media (max-width: 720px) {
     .ic-footer__top {
       grid-template-columns: 1fr;
       gap: 1.8rem;
     }
+    .ic-footer__bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 `;
 
 const SOCIAL_ICONS = {
-    facebook:  { icon: 'f',  label: 'Facebook'  },
-    instagram: { icon: '📷', label: 'Instagram' },
-    twitter:   { icon: '𝕏',  label: 'Twitter'   },
-    linkedin:  { icon: 'in', label: 'LinkedIn'  },
-    youtube:   { icon: '▶',  label: 'YouTube'   },
-    whatsapp:  { icon: '💬', label: 'WhatsApp'  },
+  facebook:  { icon: 'f',  label: 'Facebook'  },
+  instagram: { icon: '📷', label: 'Instagram' },
+  twitter:   { icon: '𝕏',  label: 'Twitter'   },
+  linkedin:  { icon: 'in', label: 'LinkedIn'  },
+  youtube:   { icon: '▶',  label: 'YouTube'   },
+  whatsapp:  { icon: '💬', label: 'WhatsApp'  },
 };
 
 (function() {
-    const tag = document.createElement('style');
-    tag.id = 'ic-footer-styles';
-    tag.textContent = footerStyles;
-    document.head.appendChild(tag);
+  if (document.getElementById('ic-footer-styles')) return;
+  const tag = document.createElement('style');
+  tag.id = 'ic-footer-styles';
+  tag.textContent = footerStyles;
+  document.head.appendChild(tag);
 })();
 
 export default {
-    name: "Footer",
-    props: {
-        // Color de fondo del footer, ej: "#0d1b2a" o "rgb(13,27,42)"
-        bgcolor: {
-            type: String,
-            default: "#0d1b2a",
-        },
-        // Color del texto, ej: "#ffffff"
-        color: {
-            type: String,
-            default: "#ffffff",
-        },
-        // Redes sociales: array de objetos { red: 'facebook', url: 'https://...' }
-        // Redes soportadas: facebook, instagram, twitter, linkedin, youtube, whatsapp
-        redes: {
-            type: Array,
-            default: () => [],
-        },
-        // Imagen del logo de ADEL u otra membresía
-        adelimg: {
-            type: String,
-            default: null,
-        },
+  name: "Footer",
+  props: {
+    bgcolor: { type: String, default: "#0d1b2a" },
+    color:   { type: String, default: "#ffffff" },
+    redes:   { type: Array,  default: () => []  },
+    adelimg: { type: String, default: null      },
+  },
+  computed: {
+    estiloFondo() {
+      return { backgroundColor: this.bgcolor, color: this.color };
     },
-    computed: {
-        estiloFondo() {
-            return { backgroundColor: this.bgcolor, color: this.color };
-        },
-    },
-    methods: {
-        labelRed(red) {
-            return SOCIAL_ICONS[red.toLowerCase()]?.label || red;
-        },
-        iconRed(red) {
-            return SOCIAL_ICONS[red.toLowerCase()]?.icon || '🔗';
-        },
-    },
-    template: `
+  },
+  methods: {
+    labelRed(red) { return SOCIAL_ICONS[red.toLowerCase()]?.label || red; },
+    iconRed(red)  { return SOCIAL_ICONS[red.toLowerCase()]?.icon  || '🔗'; },
+  },
+  template: `
     <footer class="ic-footer" :style="estiloFondo">
 
-      <!-- Tres columnas: marca / contacto / redes -->
       <div class="ic-footer__top">
 
         <!-- Columna 1: Marca -->
@@ -257,20 +237,20 @@ export default {
 
       </div>
 
-      <!-- Franja miembro ADEL -->
-      <div class="ic-footer__member">
-        <p class="ic-footer__member-text" :style="{ color }">IRON CLEAN S.A. ES MIEMBRO DE ADEL</p>
-        <img
-          v-if="adelimg"
-          :src="adelimg"
-          alt="Logo ADEL"
-          class="ic-footer__member-img"
-        />
-      </div>
-
-      <!-- Copyright -->
+      <!-- Bottom: copyright izquierda | ADEL derecha -->
       <div class="ic-footer__bottom">
+              <div class="ic-footer__member-text" :style="{ color }">Iron Clean S.A.<br>es miembro de ADEL</div>
+              <div class="ic-footer__member">
+                <img
+                  style="background-color: white;"
+                  v-if="adelimg"
+                  :src="adelimg"
+                  alt="Logo ADEL"
+                  class="ic-footer__member-img"
+                />
+              </div>
         <p class="ic-footer__copy" :style="{ color }">Copyright &copy; Iron Clean S.A. 2019</p>
+
       </div>
 
     </footer>

@@ -183,11 +183,6 @@ export default {
           convirtiendo nuestra propuesta en la solución ideal para la limpieza de
           casas, departamentos, empresas, oficinas y locales comerciales.
         </p>
-        <div class="ic-banner__tags">
-          <span class="ic-banner__tag">🏠 Hogares</span>
-          <span class="ic-banner__tag">🏢 Oficinas</span>
-          <span class="ic-banner__tag">🏪 Locales</span>
-        </div>
       </div>
 
       <div class="ic-banner__right">
