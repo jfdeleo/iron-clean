@@ -32,13 +32,28 @@
         body {
             background: #eee;
         }
+        html, body {
+          height: 100%;
+          margin: 0;
+        }
+
+        #app {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* El contenido del router-view ocupa todo el espacio disponible */
+        #app > *:not(nav):not(footer) {
+          flex: 1;
+        }
     </style>
 </head>
 <body>
 
 <div id="app">
     <navbar :items="navItems" :logo="logoSrc"></navbar>
-    <router-view></router-view>
+    <router-view class="flex-grow-1"></router-view>
     <ic-footer
             bgcolor="#0d1b2a"
             color="#ffffff"

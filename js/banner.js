@@ -55,7 +55,7 @@ const bannerStyles = `
   }
   .ic-banner__title-brand {
     display: block;
-    font-size: 3.8rem;
+    font-size: 2.8rem;
     font-weight: 900;
     color: #ffffff;
     letter-spacing: 0.04em;
@@ -170,10 +170,8 @@ export default {
       <div class="ic-banner__bg-shape ic-banner__bg-shape--2"></div>
 
       <div class="ic-banner__left">
-        <p class="ic-banner__eyebrow">Servicio profesional de limpieza</p>
         <h1 class="ic-banner__title">
-          <span class="ic-banner__title-brand">IRON CLEAN</span>
-          <span class="ic-banner__title-sa">S.A.</span>
+          <span class="ic-banner__title-brand">Servicio profesional de limpieza</span>
         </h1>
         <div class="ic-banner__divider"></div>
         <p class="ic-banner__body">
