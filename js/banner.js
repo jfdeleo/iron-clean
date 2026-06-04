@@ -157,7 +157,7 @@ export default {
   props: {
     imageSrc: {
       type: String,
-      default: "../img/logo.png",
+      default: "./img/logo.png",
     },
   },
   mounted() {
