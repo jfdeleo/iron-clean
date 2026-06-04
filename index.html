@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iron Clean</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script type="importmap">
+        {
+          "imports": {
+            "vue":               "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+            "vue-router":        "https://unpkg.com/vue-router@4/dist/vue-router.esm-browser.js",
+            "@vue/devtools-api": "https://unpkg.com/@vue/devtools-api@6/lib/esm/index.js"
+          }
+        }
+    </script>
+
+    <style>
+        .navbar-logo {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+        .navbar-wordmark {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #fff;
+        }
+        body {
+            background: #eee;
+        }
+        html, body {
+          height: 100%;
+          margin: 0;
+        }
+
+        #app {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* El contenido del router-view ocupa todo el espacio disponible */
+        #app > *:not(nav):not(footer) {
+          flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <navbar :items="navItems" :logo="logoSrc"></navbar>
+    <router-view class="flex-grow-1"></router-view>
+    <ic-footer
+            bgcolor="#0d1b2a"
+            color="#ffffff"
+            adelimg="./img/adel.png"
+            :redes="[
+            { red: 'instagram', url: 'https://instagram.com/ironclean' },
+            { red: 'facebook',  url: 'https://facebook.com/ironclean' },
+            { red: 'whatsapp',  url: 'https://wa.me/5491151956458' }
+        ]"
+    ></ic-footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/index.js" type="module"></script>
+
+</body>
+</html>
