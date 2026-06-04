@@ -3,8 +3,8 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 
 import Navbar               from './navbar.js';
 import ContactForm          from './ContactForm.js';
-import Banner               from './Banner.js';
-import Card                 from './Cards.js';
+import Banner               from './banner.js';
+import Card                 from './cards.js';
 import Footer               from './footer.js';
 import ContactFormConTexto  from './ContactFormConTexto.js';
 import Carrousel  from './carrousel.js';
