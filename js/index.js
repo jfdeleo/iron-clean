@@ -36,10 +36,9 @@ const Home = {
         :imagen-derecha="false"
       ></card>
 
-      <contact-form-con-texto
-        destinatario="franco15deleo@gmail.com"
-        texto="Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores."
-      ></contact-form-con-texto>
+       <div class="row">
+            <Contact-form-con-texto class="col-md-6 offset-md-3" destinatario="franco15deleo@gmail.com"  texto="Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores."></Contact-form-con-texto>
+        </div>
       <Carrousel
         :fotos="['./img/prueba/img1.png',
          './img/prueba/img2.png',
