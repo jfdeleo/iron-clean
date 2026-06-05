@@ -7,72 +7,67 @@ import Banner               from './banner.js';
 import Card                 from './cards.js';
 import Footer               from './footer.js';
 import ContactFormConTexto  from './ContactFormConTexto.js';
-import Carrousel  from './carrousel.js';
+import Carrousel            from './carrousel.js';
+import EventsCards          from './eventsCards.js';
 
 // ── Páginas ───────────────────────────────────────────────────────────────────
 
 const Home = {
-    template: `
-      <div>
-        <banner :items="$root.navItems" :logo="$root.logoSrc"></banner>
-        <card
-          style="margin: 1em;"
-          titulo="Experiencia y calidad"
-          :image-src="'./img/propiedad-horizontal.png'"
-          :items="[
-            { titulo: 'Asesoramiento especializado', subtitulo: 'Estamos a su disposición las 24 horas y los 365 días del año, proporcionando la mejor solución a sus necesidades de limpieza.' },
-            { titulo: 'Cumplimos lo prometido', subtitulo: 'Realizamos supervisiones permanentes a nuestro personal de limpieza para garantizar el mejor servicio al precio más conveniente.' },
-            { titulo: 'Espacios laborales limpios', subtitulo: 'Proporcionamos respuestas y soluciones en tiempo récord a las necesidades de higienización que nuestros clientes necesitan.' },
-            { titulo: 'Soluciones a Medida', subtitulo: 'Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores.' }
-          ]"
-          link="#hogar"
-        ></card>
-        <div style="color: white;background: rgb(13, 27, 42);margin-bottom: 1em; font-family: 'Lato', sans-serif;">
-        <div class="container" style="padding: 2em;"><h1><strong style="font-size: 2.5rem;font-family: 'Playfair Display', serif;">Nuestra
-        visión</strong></h1><p style="font-size: 1.4rem;">Ser un referente en servicios de limpieza, brindando equipos confiables, calificados y comprometidos, que utilicen insumos sostenibles para garantizar espacios limpios, seguros y confortables.
-        </p><h1><strong style="font-size: 2.5rem;font-family: 'Playfair Display', serif;">Nuestro compromiso</strong></h1>
-        <p style="font-size: 1.4rem;">Aportar al bienestar y la salud de las personas mediante soluciones integrales de limpieza, adaptadas a las necesidades de hogares, oficinas e instalaciones comerciales.</p></div>
-        </div></div>
-        </div>
-        </div>
+  template: `
+    <div>
+      <banner :items="$root.navItems" :logo="$root.logoSrc"></banner>
+      <card
+        style="margin: 1em;"
+        titulo="Experiencia y calidad"
+        :image-src="'./img/propiedad-horizontal.png'"
+        :items="[
+          { titulo: 'Asesoramiento especializado', subtitulo: 'Estamos a su disposición las 24 horas y los 365 días del año, proporcionando la mejor solución a sus necesidades de limpieza.' },
+          { titulo: 'Cumplimos lo prometido', subtitulo: 'Realizamos supervisiones permanentes a nuestro personal de limpieza para garantizar el mejor servicio al precio más conveniente.' },
+          { titulo: 'Espacios laborales limpios', subtitulo: 'Proporcionamos respuestas y soluciones en tiempo récord a las necesidades de higienización que nuestros clientes necesitan.' },
+          { titulo: 'Soluciones a Medida', subtitulo: 'Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores.' }
+        ]"
+        link="#hogar"
+      ></card>
 
-          <Contact-form-con-texto style="margin: 1em;" destinatario="franco15deleo@gmail.com" bgimg="./img/img.png"></Contact-form-con-texto>
-
-        <Carrousel
-          :fotos="['./img/prueba/img1.png',
-           './img/prueba/img2.png',
-           './img/prueba/img3.png',
-           './img/prueba/img4.png',
-           './img/prueba/img5.png',
-           './img/prueba/img6.png', ]"
-          :visibles="6"
-          :velocidad="60"
-        ></Carrousel>
+      <div style="color:white;background:rgb(13,27,42);margin-bottom:1em;font-family:'Lato',sans-serif;">
+        <div class="container" style="padding:2em;">
+          <h1><strong style="font-size:2.5rem;font-family:'Playfair Display',serif;">Nuestra visión</strong></h1>
+          <p style="font-size:1.4rem;">Ser un referente en servicios de limpieza, brindando equipos confiables, calificados y comprometidos, que utilicen insumos sostenibles para garantizar espacios limpios, seguros y confortables.</p>
+          <h1><strong style="font-size:2.5rem;font-family:'Playfair Display',serif;">Nuestro compromiso</strong></h1>
+          <p style="font-size:1.4rem;">Aportar al bienestar y la salud de las personas mediante soluciones integrales de limpieza, adaptadas a las necesidades de hogares, oficinas e instalaciones comerciales.</p>
+        </div>
       </div>
-    `,
-  };
+
+      <contact-form-con-texto style="margin:1em;" destinatario="franco15deleo@gmail.com" bgimg="./img/img.png"></contact-form-con-texto>
+
+      <carrousel
+        :fotos="['./img/prueba/img1.png','./img/prueba/img2.png','./img/prueba/img3.png','./img/prueba/img4.png','./img/prueba/img5.png','./img/prueba/img6.png']"
+        :visibles="6"
+        :velocidad="60"
+      ></carrousel>
+    </div>
+  `,
+};
 
 const Servicios = {
-  template: `<div class="container py-5">
-   <div class="row">
-      <div class="col-md-6 offset-md-3">
+  template: `
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
           <h1>Servicios</h1>
-          <div style="width: 50px; height: 5px; background: linear-gradient(90deg, rgb(240, 192, 64), rgb(24, 95, 165)); border-radius: 2px; margin-top: 1.5rem; margin-bottom: 1.5rem: width: 28rem;"></div>
-          <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width: 50rem;margin-top: 35px;"/>
+          <div style="width:50px;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+          <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width:50rem;margin-top:35px;"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1>Servicios</h1>
+          <div style="width:50px;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+          <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width:50rem;margin-top:35px;"/>
+        </div>
       </div>
     </div>
-       <div class="row">
-          <div class="col-md-6 offset-md-3">
-              <h1>Servicios</h1>
-              <div style="width: 50px; height: 5px; background: linear-gradient(90deg, rgb(240, 192, 64), rgb(24, 95, 165)); border-radius: 2px; margin-top: 1.5rem; margin-bottom: 1.5rem: width: 28rem;"></div>
-              <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width: 50rem;margin-top: 35px;"/>
-          </div>
-        </div>
-
-
-
-
-  </div>`,
+  `,
 };
 
 const Nosotros = {
@@ -87,6 +82,31 @@ const Contacto = {
   `,
 };
 
+const Eventos = {
+  template: `
+    <div class="container py-5">
+      <div class="jumbotron">
+        <h1 class="display-4">Eventos</h1>
+          <p class="lead"> (Pagina en construccion)⚒️</p>
+      </div>
+      <div class="row g-4">
+        <div
+          v-for="(evento, i) in $root.eventos"
+          :key="i"
+          style="height: 30em;"
+          class="col-12 col-sm-6 col-md-4 col-lg-3"
+        >
+          <events-cards
+            :titulo="evento.titulo"
+            :descripcion="evento.descripcion"
+            :fotos="evento.fotos"
+          ></events-cards>
+        </div>
+      </div>
+    </div>
+  `,
+};
+
 // ── Router ────────────────────────────────────────────────────────────────────
 
 const router = createRouter({
@@ -95,6 +115,7 @@ const router = createRouter({
     { path: '/',          component: Home      },
     { path: '/servicios', component: Servicios },
     { path: '/nosotros',  component: Nosotros  },
+    { path: '/eventos',   component: Eventos   },
     { path: '/contacto',  component: Contacto  },
   ],
   scrollBehavior() {
@@ -109,10 +130,49 @@ const app = createApp({
     return {
       logoSrc: null,
       navItems: [
-        { name: 'Inicio',    link: '#/'          },
-        { name: 'Servicios', link: '#/servicios' },
-        { name: 'Nosotros',  link: '#/nosotros'  },
-        { name: 'Contacto',  link: '#/contacto'  },
+        { name: 'Inicio',            link: '#/'          },
+        { name: 'Sobre nosotros',    link: '#/nosotros'  },
+        { name: 'Nuestro equipo',    link: '#/servicios' },
+        { name: 'Nuestros clientes', link: '#/'          },
+        { name: 'Eventos',           link: '#/eventos'   },
+        { name: 'Contacto',          link: '#/contacto'  },
+      ],
+      dropdowns: [
+        { name: 'Desinfección COVID-19',                          link: '#/' },
+        { name: 'Fotogaleria',                                    link: '#/' },
+        { name: 'HOGAR MARÍA LUISA - Vos también podes ayudar',  link: '#/' },
+      ],
+      eventos: [
+        {
+          titulo: 'Desfile DESIGNER de Guillermo Azar Producciones, Parque de las Naciones Unidas.',
+          descripcion: 'Descripcion del evento',
+          fotos: [
+            './img/imagenes-eventos/img1.png',
+            './img/imagenes-eventos/img2.png',
+            './img/imagenes-eventos/img3.png',
+          ],
+        },
+        {
+          titulo: 'Desfile DESIGNER de Guillermo Azar Producciones, Parque de las Naciones Unidas.',
+          descripcion: 'Descripcion del evento',
+          fotos: [
+            './img/prueba/img2.png',
+            './img/prueba/img3.png',
+            './img/prueba/img4.png',
+            './img/prueba/img5.png',
+            './img/prueba/img6.png',
+          ],
+        },
+        {
+          titulo: 'Desfile DESIGNER de Guillermo Azar Producciones, Parque de las Naciones Unidas.',
+          descripcion: 'Descripcion del evento',
+          fotos: [
+            './img/prueba/img3.png',
+            './img/prueba/img4.png',
+            './img/prueba/img5.png',
+            './img/prueba/img6.png',
+          ],
+        },
       ],
     };
   },
@@ -126,6 +186,7 @@ app.component('Banner',              Banner);
 app.component('Card',                Card);
 app.component('ic-footer',           Footer);
 app.component('ContactFormConTexto', ContactFormConTexto);
-app.component('Carrousel', Carrousel);
+app.component('Carrousel',           Carrousel);
+app.component('EventsCards',         EventsCards);
 
 app.mount('#app');
