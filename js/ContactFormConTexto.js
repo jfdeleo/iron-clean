@@ -17,6 +17,10 @@ export default {
             type: String,
             default: null,
         },
+        bgimg: {
+            type: String,
+            default: null,
+        },
     },
     data() {
         return {
@@ -29,6 +33,19 @@ export default {
             enviado: false,
             error: false,
         };
+    },
+    computed: {
+        fondoEstilo() {
+            if (this.bgimg) {
+                return {
+                    backgroundImage: `url('${this.bgimg}')`,
+                    backgroundSize: '100% 100%',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                };
+            }
+            return { background: '#0d1b2a' };
+        },
     },
     methods: {
         enviarMail() {
@@ -49,14 +66,13 @@ export default {
         },
     },
     template: `
-    <div style="
-        background: #0d1b2a;
-        border-radius: 20px;
-        padding: 2.5rem;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-        position: relative;
-        overflow: hidden;
-    ">
+    <div :style="[fondoEstilo, {
+        borderRadius: '20px',
+        padding: '2.5rem',
+        boxShadow: '0 4px 24px rgba(0,0,0,0.15)',
+        position: 'relative',
+        overflow: 'hidden',
+    }]">
 
       <!-- Decoración de fondo global -->
       <div style="
@@ -66,6 +82,7 @@ export default {
         background: radial-gradient(circle, rgba(24,95,165,0.20) 0%, transparent 70%);
         top: -150px; left: -100px;
         pointer-events: none;
+        z-index: 0;
       "></div>
       <div style="
         position: absolute;
@@ -74,12 +91,13 @@ export default {
         background: radial-gradient(circle, rgba(240,192,64,0.10) 0%, transparent 70%);
         bottom: -80px; right: -60px;
         pointer-events: none;
+        z-index: 0;
       "></div>
 
-      <div class="container" style="position: relative; z-index: 1;">
+      <div class="container-fluid" style="position: relative; z-index: 1;">
         <div class="row align-items-stretch g-4">
 
-          <!-- Texto lateral: en mobile va primero (order-1), en desktop izquierda (order-md-0) -->
+          <!-- Texto: izquierda en desktop, arriba en mobile -->
           <div v-if="texto" class="col-12 col-md-6 order-1 order-md-0 d-flex">
             <div style="
               display: flex;
@@ -87,19 +105,18 @@ export default {
               justify-content: center;
               width: 100%;
               padding: 1rem 0.5rem;
+              text-align: left;
             ">
-
-              <span   style="
-                        display: block;
-                        font-size: 1.4rem;
-                        font-weight: 700;
-                        color: #f0c040;
-                        letter-spacing: 0.18em;
-                        margin-top: 0.1rem;
-                        font-weight: bold;
-                        margin-bottom: 1.5em;
-                      ">
-                      Atención personalizada
+              <span style="
+                display: block;
+                font-size: 2.4rem;
+                font-family: 'Playfair Display', serif;
+                font-weight: 700;
+                color: #f0c040;
+                margin-top: 0.1rem;
+                margin-bottom: 1.5em;
+              ">
+                Atención personalizada
               </span>
 
               <p style="
@@ -107,22 +124,20 @@ export default {
                 color: rgba(255,255,255,0.85);
                 font-family: 'Lato', sans-serif;
                 font-size: 1.5rem;
-                font-weight: 300;
+                font-weight: bold!important;
                 line-height: 1.8;
                 margin: 0;
                 flex: 1;
               ">{{ texto }}</p>
-
-
             </div>
           </div>
 
-          <!-- Formulario: en mobile va segundo (order-2), en desktop derecha (order-md-1) -->
-          <div :class="texto ? 'col-12 col-md-6 order-2 order-md-1' : 'col-12'">
-            <div class="card shadow-sm p-4 p-md-5 h-100" style="max-width: 560px; margin: 0 auto;">
+          <!-- Formulario: derecha en desktop, abajo en mobile -->
+          <div :class="texto ? 'col-12 col-md-6 order-2 order-md-1 d-flex justify-content-end' : 'col-12'">
+            <div class="card shadow-sm p-4 p-md-5 h-100 w-100">
 
-              <h2 class="fw-bold text-primary mb-1">{{ title }}</h2>
-              <p class="text-primary mb-4">{{ subtitle }}</p>
+              <h2 class="fw-bold text-primary mb-1 text-center">{{ title }}</h2>
+              <p class="text-primary mb-4 text-center" style="font-weight:bold!important;">{{ subtitle }}</p>
 
               <form @submit.prevent="handleSubmit" novalidate>
 

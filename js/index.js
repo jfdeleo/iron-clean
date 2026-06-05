@@ -35,9 +35,8 @@ const Home = {
         </div>
         </div>
 
-         <div class="row">
-              <Contact-form-con-texto class="col-md-6 offset-md-3" destinatario="franco15deleo@gmail.com"  texto="Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores."></Contact-form-con-texto>
-          </div>
+          <Contact-form-con-texto style="margin-left: 0.5em; width: 99.1%;" destinatario="franco15deleo@gmail.com" bgimg="./img/img.png"  texto="Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores."></Contact-form-con-texto>
+
         <Carrousel
           :fotos="['./img/prueba/img1.png',
            './img/prueba/img2.png',
