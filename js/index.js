@@ -12,49 +12,57 @@ import Carrousel  from './carrousel.js';
 // ── Páginas ───────────────────────────────────────────────────────────────────
 
 const Home = {
-  template: `
-    <div>
-      <banner :items="$root.navItems" :logo="$root.logoSrc"></banner>
+    template: `
+      <div>
+        <banner :items="$root.navItems" :logo="$root.logoSrc"></banner>
+        <card
+          style="margin: 1em;"
+          :image-src="'./img/propiedad-horizontal.png'"
+          image-alt="Servicio de propiedad horizontal"
+          titulo="Sobre Nosotros"
+          :items="['Limpieza y desinfección de baños','Limpieza de escritorios y mobiliarios','Limpieza de pasillos, escaleras y espacios comunes.','Limpieza de vidrios y paredes interiores.','Recolección y depósito de basuras.']"
+          link="#hogar"
+          :imagen-derecha="false"
+        ></card>
 
-      <card
-        style="margin: 1em;"
-        :image-src="'./img/taza.png'"
-        image-alt="Servicio de hogar"
-        titulo="Hogar"
-        :items="['Limpieza y desinfección de baños y cocinas.','Limpieza de habitaciones, salas y zonas comunes.','Servicio de limpieza de cocina básica y sencilla.','Recolección y depósito de basuras.','Lavado de ropa.','Planchado de ropa.']"
-        link="#hogar"
-        :imagen-derecha="true"
-      ></card>
-
-      <card
-        style="margin: 1em;"
-        :image-src="'./img/propiedad-horizontal.png'"
-        image-alt="Servicio de propiedad horizontal"
-        titulo="EMPRESAS Y PROPIEDAD HORIZONTAL"
-        :items="['Limpieza y desinfección de baños','Limpieza de escritorios y mobiliarios','Limpieza de pasillos, escaleras y espacios comunes.','Limpieza de vidrios y paredes interiores.','Recolección y depósito de basuras.']"
-        link="#hogar"
-        :imagen-derecha="false"
-      ></card>
-
-       <div class="row">
-            <Contact-form-con-texto class="col-md-6 offset-md-3" destinatario="franco15deleo@gmail.com"  texto="Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores."></Contact-form-con-texto>
-        </div>
-      <Carrousel
-        :fotos="['./img/prueba/img1.png',
-         './img/prueba/img2.png',
-         './img/prueba/img3.png',
-         './img/prueba/img4.png',
-         './img/prueba/img5.png',
-         './img/prueba/img6.png', ]"
-        :visibles="6"
-        :velocidad="60"
-      ></Carrousel>
-    </div>
-  `,
-};
+         <div class="row">
+              <Contact-form-con-texto class="col-md-6 offset-md-3" destinatario="franco15deleo@gmail.com"  texto="Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores."></Contact-form-con-texto>
+          </div>
+        <Carrousel
+          :fotos="['./img/prueba/img1.png',
+           './img/prueba/img2.png',
+           './img/prueba/img3.png',
+           './img/prueba/img4.png',
+           './img/prueba/img5.png',
+           './img/prueba/img6.png', ]"
+          :visibles="6"
+          :velocidad="60"
+        ></Carrousel>
+      </div>
+    `,
+  };
 
 const Servicios = {
-  template: `<div class="container py-5"><h1>Servicios</h1></div>`,
+  template: `<div class="container py-5">
+   <div class="row">
+      <div class="col-md-6 offset-md-3">
+          <h1>Servicios</h1>
+          <div style="width: 50px; height: 5px; background: linear-gradient(90deg, rgb(240, 192, 64), rgb(24, 95, 165)); border-radius: 2px; margin-top: 1.5rem; margin-bottom: 1.5rem: width: 28rem;"></div>
+          <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width: 50rem;margin-top: 35px;"/>
+      </div>
+    </div>
+       <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <h1>Servicios</h1>
+              <div style="width: 50px; height: 5px; background: linear-gradient(90deg, rgb(240, 192, 64), rgb(24, 95, 165)); border-radius: 2px; margin-top: 1.5rem; margin-bottom: 1.5rem: width: 28rem;"></div>
+              <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width: 50rem;margin-top: 35px;"/>
+          </div>
+        </div>
+
+
+
+
+  </div>`,
 };
 
 const Nosotros = {

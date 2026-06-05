@@ -14,6 +14,8 @@ const bannerStyles = `
     min-height: 380px;
     font-family: 'Lato', sans-serif;
     margin: 1rem;
+    padding-left: 8em!important;
+    padding-right: 8em!important;
   }
   .ic-banner__bg-shape {
     position: absolute;
@@ -82,6 +84,7 @@ const bannerStyles = `
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.70);
     margin: 0 0 1.5rem 0;
+    letter-spacing: 0.08em;
   }
   .ic-banner__tags {
     display: flex;
@@ -104,8 +107,8 @@ const bannerStyles = `
   }
   .ic-banner__img-wrapper {
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 420px;
+    height: 420px;
     border-radius: 20px;
     background: #ffffff;
     display: flex;
@@ -139,7 +142,7 @@ const bannerStyles = `
     .ic-banner__title-brand { font-size: 2.6rem; }
     .ic-banner__divider { margin: 1rem auto; }
     .ic-banner__tags { justify-content: center; }
-    .ic-banner__img-wrapper { width: 200px; height: 200px; }
+    .ic-banner__img-wrapper { width: 300px; height: 300px; }
     .ic-banner__bg-shape--2 { right: 0; }
   }
 `;
@@ -175,11 +178,12 @@ export default {
         </h1>
         <div class="ic-banner__divider"></div>
         <p class="ic-banner__body">
-          Pone a su disposición profesionales altamente capacitados para el aseo
-          y la limpieza de hogares y oficinas. Nuestros rigurosos procesos de
-          selección y formación garantizan un servicio confiable y de excelencia,
-          convirtiendo nuestra propuesta en la solución ideal para la limpieza de
-          casas, departamentos, empresas, oficinas y locales comerciales.
+            Pone a su disposicion a profesionales altamente capacitados y confiables
+            para el aseo y la limpieza de <strong style="font-weight: 900;color: white;">oficinas, consorcios, empresas,
+            estudios de television, eventos</strong>.
+            Nuestro objetivo es brindar un entorno de trabajo limpio, seguro y saludable
+            para ayudar a fomentar la comodidad y productividad.
+
         </p>
       </div>
 

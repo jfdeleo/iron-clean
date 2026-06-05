@@ -42,15 +42,35 @@
           display: flex;
           flex-direction: column;
         }
+        router-view, .flex-grow-1 {
+          display: block;
+          width: 100%;
+        }
+
+        .flex-grow-1 {
+          width: 100%;
+          max-width: 100%;
+        }
 
         /* El contenido del router-view ocupa todo el espacio disponible */
         #app > *:not(nav):not(footer) {
           flex: 1;
         }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          overflow-x: hidden;
+        }
+
+        #app {
+          overflow-x: hidden;
+        }
     </style>
 </head>
 <body>
-
 <div id="app">
     <navbar :items="navItems" :logo="logoSrc"></navbar>
     <router-view class="flex-grow-1"></router-view>

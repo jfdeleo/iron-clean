@@ -11,7 +11,7 @@ export default {
     },
   },
   template: `
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <nav class="navbar navbar-expand-lg navbar-dark px-3" style="background: #0d1b2a;">
 
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img
@@ -20,7 +20,7 @@ export default {
           alt="Logo"
           class="navbar-logo"
         />
-        <span v-else class="navbar-wordmark">IRON CLEAN</span>
+        <span v-else class="navbar-wordmark" style="font-family: 'Playfair Display', serif;">IRON CLEAN <div class="ic-footer__slogan" :style="{ color }">Eficiencia en el manejo de soluciones.</div> </span>
       </a>
 
       <button
