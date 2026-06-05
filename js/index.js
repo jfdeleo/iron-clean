@@ -49,19 +49,12 @@ const Home = {
   `,
 };
 
-const Servicios = {
+const NuestroEquipo = {
   template: `
     <div class="container py-5">
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <h1>Servicios</h1>
-          <div style="width:50px;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-          <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width:50rem;margin-top:35px;"/>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <h1>Servicios</h1>
+          <h1>Nuestro Equipo</h1>
           <div style="width:50px;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
           <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width:50rem;margin-top:35px;"/>
         </div>
@@ -71,16 +64,71 @@ const Servicios = {
 };
 
 const Nosotros = {
-  template: `<div class="container py-5"><h1>Nosotros</h1></div>`,
+  template: `<div class="container py-5">
+        <div class="jumbotron">
+          <h1 class="display-4">Nosotros</h1>
+            <p class="lead"> (Pagina en construccion)⚒️</p>
+        </div>
+        </div>`,
 };
+
+const NuestrosClientes = {
+  template: `<div class="container py-5">
+        <div class="jumbotron">
+          <h1 class="display-4">Nuestros Clientes</h1>
+            <p class="lead"> (Pagina en construccion)⚒️</p>
+        </div>
+        </div>`,
+};
+
 
 const Contacto = {
   template: `
     <div class="container py-5">
+      <div class="jumbotron">
+        <h1 class="display-4">Contacto</h1>
+          <p class="lead"> (Pagina en construccion)⚒️</p>
+      </div>
       <contact-form destinatario="franco15deleo@gmail.com"></contact-form>
     </div>
   `,
 };
+
+const Covid = {
+  template: `
+    <div class="container py-5">
+      <div class="jumbotron">
+        <h1 class="display-4">Covid-19</h1>
+          <p class="lead"> (Pagina en construccion)⚒️</p>
+      </div>
+    </div>
+  `,
+};
+
+const Fotogaleria = {
+  template: `
+    <div class="container py-5">
+      <div class="jumbotron">
+        <h1 class="display-4">Fotogaleria</h1>
+          <p class="lead"> (Pagina en construccion)⚒️</p>
+      </div>
+    </div>
+  `,
+};
+
+const HogarMariaLuisa = {
+  template: `
+    <div class="container py-5">
+      <div class="jumbotron">
+        <h1 class="display-4">Hogar Maria Luisa</h1>
+          <p class="lead"> (Pagina en construccion)⚒️</p>
+      </div>
+    </div>
+  `,
+};
+
+
+
 
 const Eventos = {
   template: `
@@ -113,11 +161,16 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     { path: '/',          component: Home      },
-    { path: '/servicios', component: Servicios },
-    { path: '/nosotros',  component: Nosotros  },
+    { path: '/sobre-nosotros', component: Nosotros },
+    { path: '/nuestro-equipo', component: NuestroEquipo },
+    { path: '/nuestros-clientes',  component: NuestrosClientes  },
     { path: '/eventos',   component: Eventos   },
     { path: '/contacto',  component: Contacto  },
+    { path: '/covid-19',  component: Covid  },
+    { path: '/fotogaleria',  component: Fotogaleria  },
+    { path: '/hogar-maria-luisa',  component: HogarMariaLuisa  },
   ],
+
   scrollBehavior() {
     return { top: 0 };
   },
@@ -131,16 +184,16 @@ const app = createApp({
       logoSrc: null,
       navItems: [
         { name: 'Inicio',            link: '#/'          },
-        { name: 'Sobre nosotros',    link: '#/nosotros'  },
-        { name: 'Nuestro equipo',    link: '#/servicios' },
-        { name: 'Nuestros clientes', link: '#/'          },
+        { name: 'Sobre nosotros',    link: '#/sobre-nosotros'  },
+        { name: 'Nuestro equipo',    link: '#/nuestro-equipo' },
+        { name: 'Nuestros clientes', link: '#/nuestros-clientes'          },
         { name: 'Eventos',           link: '#/eventos'   },
         { name: 'Contacto',          link: '#/contacto'  },
       ],
       dropdowns: [
-        { name: 'Desinfección COVID-19',                          link: '#/' },
-        { name: 'Fotogaleria',                                    link: '#/' },
-        { name: 'HOGAR MARÍA LUISA - Vos también podes ayudar',  link: '#/' },
+        { name: 'Desinfección COVID-19',                          link: '#/covid-19' },
+        { name: 'Fotogaleria',                                    link: '#/fotogaleria' },
+        { name: 'HOGAR MARÍA LUISA - Vos también podes ayudar',  link: '#/hogar-maria-luisa' },
       ],
       eventos: [
         {
