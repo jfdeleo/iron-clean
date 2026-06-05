@@ -17,13 +17,23 @@ const Home = {
         <banner :items="$root.navItems" :logo="$root.logoSrc"></banner>
         <card
           style="margin: 1em;"
+          titulo="Experiencia y calidad"
           :image-src="'./img/propiedad-horizontal.png'"
-          image-alt="Servicio de propiedad horizontal"
-          titulo="Sobre Nosotros"
-          :items="['Limpieza y desinfección de baños','Limpieza de escritorios y mobiliarios','Limpieza de pasillos, escaleras y espacios comunes.','Limpieza de vidrios y paredes interiores.','Recolección y depósito de basuras.']"
+          :items="[
+            { titulo: 'Asesoramiento especializado', subtitulo: 'Estamos a su disposición las 24 horas y los 365 días del año, proporcionando la mejor solución a sus necesidades de limpieza.' },
+            { titulo: 'Cumplimos lo prometido', subtitulo: 'Realizamos supervisiones permanentes a nuestro personal de limpieza para garantizar el mejor servicio al precio más conveniente.' },
+            { titulo: 'Cumplimos lo prometido', subtitulo: 'Proporcionamos respuestas y soluciones en tiempo récord a las necesidades de higienización que nuestros clientes necesitan.' }
+          ]"
           link="#hogar"
-          :imagen-derecha="false"
         ></card>
+        <div style="color: white;background: rgb(13, 27, 42);margin-bottom: 1em; font-family: 'Lato', sans-serif;">
+        <div class="container" style="padding: 2em;"><h1><strong style="font-size: 2.5rem;font-family: 'Playfair Display', serif;">Nuestra
+        visión</strong></h1><p style="font-size: 1.4rem;">Ser un referente en servicios de limpieza, brindando equipos confiables, calificados y comprometidos, que utilicen insumos sostenibles para garantizar espacios limpios, seguros y confortables.
+        </p><h1><strong style="font-size: 2.5rem;font-family: 'Playfair Display', serif;">Nuestro compromiso</strong></h1>
+        <p style="font-size: 1.4rem;">Aportar al bienestar y la salud de las personas mediante soluciones integrales de limpieza, adaptadas a las necesidades de hogares, oficinas e instalaciones comerciales.</p></div>
+        </div></div>
+        </div>
+        </div>
 
          <div class="row">
               <Contact-form-con-texto class="col-md-6 offset-md-3" destinatario="franco15deleo@gmail.com"  texto="Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores."></Contact-form-con-texto>

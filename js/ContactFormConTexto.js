@@ -88,15 +88,7 @@ export default {
               width: 100%;
               padding: 1rem 0.5rem;
             ">
-              <!-- Línea decorativa superior -->
-              <div style="
-                width: 50px;
-                height: 5px;
-                background: linear-gradient(90deg, #f0c040, #185fa5);
-                border-radius: 2px;
-                margin-top: 1.5rem;
-                margin-bottom: 1.5rem;
-              "></div>
+
               <span   style="
                         display: block;
                         font-size: 1.4rem;
