@@ -61,9 +61,10 @@ export default {
       <div style="position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(240,192,64,0.10) 0%,transparent 70%);bottom:-80px;right:-60px;pointer-events:none;z-index:0;"></div>
 
       <div class="container-fluid" style="position:relative;z-index:1;">
-        <div class="row align-items-stretch g-4">
+        <div class="row align-items-stretch g-4 justify-content-center">
 
-          <div v-if="texto" class="col-12 col-md-6 order-1 order-md-0 d-flex">
+          <!-- Texto: solo se muestra si se pasa la prop -->
+          <div v-if="texto" class="col-12 col-md-5 order-1 order-md-0 d-flex">
             <div style="display:flex;flex-direction:column;justify-content:center;width:100%;padding:1rem 0.5rem;text-align:left;">
               <span style="display:block;font-size:2.4rem;font-family:'Playfair Display',serif;font-weight:700;color:#f0c040;margin-top:0.1rem;margin-bottom:1.5em;">
                 Atención personalizada
@@ -72,7 +73,8 @@ export default {
             </div>
           </div>
 
-          <div :class="texto ? 'col-12 col-md-6 order-2 order-md-1 d-flex justify-content-end' : 'col-12'">
+          <!-- Formulario: centrado si no hay texto, a la derecha si hay texto -->
+          <div :class="texto ? 'col-12 col-md-5 order-2 order-md-1' : 'col-12 col-md-6'">
             <div class="card shadow-sm p-4 p-md-5 h-100 w-100">
 
               <h2 class="fw-bold text-primary mb-1 text-center">{{ title }}</h2>

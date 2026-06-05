@@ -22,7 +22,8 @@ const Home = {
           :items="[
             { titulo: 'Asesoramiento especializado', subtitulo: 'Estamos a su disposición las 24 horas y los 365 días del año, proporcionando la mejor solución a sus necesidades de limpieza.' },
             { titulo: 'Cumplimos lo prometido', subtitulo: 'Realizamos supervisiones permanentes a nuestro personal de limpieza para garantizar el mejor servicio al precio más conveniente.' },
-            { titulo: 'Cumplimos lo prometido', subtitulo: 'Proporcionamos respuestas y soluciones en tiempo récord a las necesidades de higienización que nuestros clientes necesitan.' }
+            { titulo: 'Espacios laborales limpios', subtitulo: 'Proporcionamos respuestas y soluciones en tiempo récord a las necesidades de higienización que nuestros clientes necesitan.' },
+            { titulo: 'Soluciones a Medida', subtitulo: 'Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores.' }
           ]"
           link="#hogar"
         ></card>
@@ -35,7 +36,7 @@ const Home = {
         </div>
         </div>
 
-          <Contact-form-con-texto style="margin-left: 0.5em; width: 99.1%;" destinatario="franco15deleo@gmail.com" bgimg="./img/img.png"  texto="Somos una empresa de limpieza que se distingue por ofrecer soluciones eficientes, un compromiso genuino y una atención cercana tanto a nuestros clientes como a nuestros colaboradores."></Contact-form-con-texto>
+          <Contact-form-con-texto style="margin: 1em;" destinatario="franco15deleo@gmail.com" bgimg="./img/img.png"></Contact-form-con-texto>
 
         <Carrousel
           :fotos="['./img/prueba/img1.png',
