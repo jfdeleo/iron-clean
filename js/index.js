@@ -49,13 +49,27 @@ const Home = {
   `,
 };
 
+const Nosotros = {
+  template: `<div class="container py-5">
+        <div class="jumbotron">
+              <div class="row">
+                <div class="col-md-6 offset-md-3">
+                  <h1 style="text-align: center;">Nosotros</h1>
+                  <div style="width: 8em !important;margin-left:auto;margin-right:auto;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+                    <p class="lead"> (Pagina en construccion)⚒️</p>
+                </div>
+              </div>
+        </div>
+        </div>`,
+};
+
 const NuestroEquipo = {
   template: `
     <div class="container py-5">
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <h1>Nuestro Equipo</h1>
-          <div style="width:50px;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+          <h1 style="text-align: center;">Nuestro Equipo</h1>
+          <div style="width: 12em !important;margin-left:auto;margin-right:auto;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
           <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width:50rem;margin-top:35px;"/>
         </div>
       </div>
@@ -63,79 +77,32 @@ const NuestroEquipo = {
   `,
 };
 
-const Nosotros = {
-  template: `<div class="container py-5">
-        <div class="jumbotron">
-          <h1 class="display-4">Nosotros</h1>
-            <p class="lead"> (Pagina en construccion)⚒️</p>
-        </div>
-        </div>`,
-};
 
 const NuestrosClientes = {
   template: `<div class="container py-5">
         <div class="jumbotron">
-          <h1 class="display-4">Nuestros Clientes</h1>
-            <p class="lead"> (Pagina en construccion)⚒️</p>
+              <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h1 style="text-align: center;">Nuestros Clientes</h1>
+                    <div style="width: 10em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+                    <p class="lead"> (Pagina en construccion)⚒️</p>
+                </div>
+              </div>
         </div>
         </div>`,
 };
-
-
-const Contacto = {
-  template: `
-    <div class="container py-5">
-      <div class="jumbotron">
-        <h1 class="display-4">Contacto</h1>
-          <p class="lead"> (Pagina en construccion)⚒️</p>
-      </div>
-      <contact-form destinatario="franco15deleo@gmail.com"></contact-form>
-    </div>
-  `,
-};
-
-const Covid = {
-  template: `
-    <div class="container py-5">
-      <div class="jumbotron">
-        <h1 class="display-4">Covid-19</h1>
-          <p class="lead"> (Pagina en construccion)⚒️</p>
-      </div>
-    </div>
-  `,
-};
-
-const Fotogaleria = {
-  template: `
-    <div class="container py-5">
-      <div class="jumbotron">
-        <h1 class="display-4">Fotogaleria</h1>
-          <p class="lead"> (Pagina en construccion)⚒️</p>
-      </div>
-    </div>
-  `,
-};
-
-const HogarMariaLuisa = {
-  template: `
-    <div class="container py-5">
-      <div class="jumbotron">
-        <h1 class="display-4">Hogar Maria Luisa</h1>
-          <p class="lead"> (Pagina en construccion)⚒️</p>
-      </div>
-    </div>
-  `,
-};
-
-
-
 
 const Eventos = {
   template: `
     <div class="container py-5">
       <div class="jumbotron">
-        <h1 class="display-4">Eventos</h1>
-          <p class="lead"> (Pagina en construccion)⚒️</p>
+              <div class="row">
+                <div class="col-md-6 offset-md-3">
+                      <h1 style="text-align: center;">Eventos</h1>
+                      <div style="width: 5em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+                      <p class="lead"> (Pagina en construccion)⚒️</p>
+                </div>
+              </div>
       </div>
       <div class="row g-4">
         <div
@@ -154,6 +121,78 @@ const Eventos = {
     </div>
   `,
 };
+
+
+
+const Contacto = {
+  template: `
+    <div class="container py-5">
+      <div class="jumbotron">
+            <div class="row">
+              <div class="col-md-6 offset-md-3">
+                  <h1 style="text-align: center;">Contacto</h1>
+                  <div style="width: 7em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+                  <p class="lead"> (Pagina en construccion)⚒️</p>
+
+              </div>
+            </div>
+      </div>
+      <contact-form destinatario="franco15deleo@gmail.com"></contact-form>
+    </div>
+  `,
+};
+
+const Covid = {
+  template: `
+    <div class="container py-5">
+      <div class="jumbotron">
+                    <div class="row">
+                      <div class="col-md-6 offset-md-3">
+                          <h1 style="text-align: center;">Covid-19</h1>
+                          <div style="width: 7em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+                          <p class="lead"> (Pagina en construccion)⚒️</p>
+                      </div>
+                    </div>
+      </div>
+    </div>
+  `,
+};
+
+const Fotogaleria = {
+  template: `
+    <div class="container py-5">
+      <div class="jumbotron">
+              <div class="row">
+                 <div class="col-md-6 offset-md-3">
+                  <h1 style="text-align: center;">Fotogaleria</h1>
+                  <div style="width: 10em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+                  <p class="lead"> (Pagina en construccion)⚒️</p>
+              </div>
+            </div>
+      </div>
+    </div>
+  `,
+};
+
+const HogarMariaLuisa = {
+  template: `
+    <div class="container py-5">
+      <div class="jumbotron">
+                    <div class="row">
+                      <div class="col-md-6 offset-md-3">
+                          <h1 style="text-align: center;">Hogar Maria Luisa</h1>
+                          <div style="width: 15em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+                          <p class="lead"> (Pagina en construccion)⚒️</p>
+                      </div>
+                </div>
+      </div>
+    </div>
+  `,
+};
+
+
+
+
 
 // ── Router ────────────────────────────────────────────────────────────────────
 
