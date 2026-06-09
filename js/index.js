@@ -9,6 +9,7 @@ import Footer               from './footer.js';
 import ContactFormConTexto  from './ContactFormConTexto.js';
 import Carrousel            from './carrousel.js';
 import EventsCards          from './eventsCards.js';
+import FichaContacto from './contactanos.js';
 
 // ── Páginas ───────────────────────────────────────────────────────────────────
 
@@ -132,7 +133,10 @@ const Contacto = {
               <div class="col-md-6 offset-md-3">
                   <h1 style="text-align: center;">Contacto</h1>
                   <div style="width: 7em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-                  <p class="lead"> (Pagina en construccion)⚒️</p>
+                  <ficha-contacto
+                    apikey="AIzaSyB_1RiBPpzx0T1rviCQjtlPvf2hhiTpJas"
+                    direccion="A. Moriondo 2941, Sáenz Peña, Provincia de Buenos Aires"
+                  ></ficha-contacto>
 
               </div>
             </div>
@@ -280,5 +284,6 @@ app.component('ic-footer',           Footer);
 app.component('ContactFormConTexto', ContactFormConTexto);
 app.component('Carrousel',           Carrousel);
 app.component('EventsCards',         EventsCards);
+app.component('FichaContacto', FichaContacto);
 
 app.mount('#app');
