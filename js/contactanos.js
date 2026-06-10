@@ -5,15 +5,18 @@ const fichaStyles = `
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
     font-family: 'Lato', sans-serif;
+    height: 100%;
   }
 
   .ficha__inner {
     display: flex;
+    height: 100%;
     min-height: 420px;
   }
 
   .ficha__mapa {
     flex: 1;
+    height: 100%;
     min-height: 300px;
   }
 
@@ -32,6 +35,7 @@ const fichaStyles = `
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    overflow-y: auto;
   }
 
   .ficha__titulo {
@@ -91,13 +95,14 @@ const fichaStyles = `
   @media (max-width: 768px) {
     .ficha__inner {
       flex-direction: column;
+      height: auto;
     }
     .ficha__datos {
       flex: none;
       order: -1;
     }
     .ficha__mapa {
-      min-height: 280px;
+      height: 280px;
     }
   }
 `;
@@ -113,9 +118,7 @@ const fichaStyles = `
 export default {
   name: 'FichaContacto',
   props: {
-    // Tu API key de Google Maps
-    apikey: { type: String, required: true },
-    // Dirección a mostrar en el mapa
+    apikey:    { type: String, required: true                    },
     direccion: { type: String, default: 'Buenos Aires, Argentina' },
   },
   computed: {
@@ -128,7 +131,6 @@ export default {
     <div class="ficha">
       <div class="ficha__inner">
 
-        <!-- Mapa -->
         <div class="ficha__mapa">
           <iframe
             :src="mapaUrl"
@@ -138,7 +140,6 @@ export default {
           ></iframe>
         </div>
 
-        <!-- Datos -->
         <div class="ficha__datos">
 
           <div>

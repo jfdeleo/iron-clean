@@ -133,15 +133,24 @@ const Contacto = {
               <div class="col-md-6 offset-md-3">
                   <h1 style="text-align: center;">Contacto</h1>
                   <div style="width: 7em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-                  <ficha-contacto
-                    apikey="AIzaSyB_1RiBPpzx0T1rviCQjtlPvf2hhiTpJas"
-                    direccion="A. Moriondo 2941, Sáenz Peña, Provincia de Buenos Aires"
-                  ></ficha-contacto>
+
 
               </div>
             </div>
+            <div class="row">
+
+                              <ficha-contacto
+                              class="col-md-6 offset-md-1"
+                              style="
+                                  height: 100%;
+                              "
+                                apikey="AIzaSyB_1RiBPpzx0T1rviCQjtlPvf2hhiTpJas"
+                                direccion="A. Moriondo 2941, Sáenz Peña, Provincia de Buenos Aires"
+                              ></ficha-contacto>
+                             <contact-form class="col-md-5" destinatario="franco15deleo@gmail.com"></contact-form>
+
+            </div>
       </div>
-      <contact-form destinatario="franco15deleo@gmail.com"></contact-form>
     </div>
   `,
 };
