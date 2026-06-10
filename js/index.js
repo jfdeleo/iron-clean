@@ -10,6 +10,8 @@ import ContactFormConTexto  from './ContactFormConTexto.js';
 import Carrousel            from './carrousel.js';
 import EventsCards          from './eventsCards.js';
 import FichaContacto from './contactanos.js';
+import GrillaClientes from './nuestrosClientes.js';
+
 
 // ── Páginas ───────────────────────────────────────────────────────────────────
 
@@ -86,7 +88,39 @@ const NuestrosClientes = {
                 <div class="col-md-6 offset-md-3">
                     <h1 style="text-align: center;">Nuestros Clientes</h1>
                     <div style="width: 10em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-                    <p class="lead"> (Pagina en construccion)⚒️</p>
+                <grilla-clientes
+                  :columnas="5"
+                  :logos="[
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000165-59de259de4/PPlus_Logo_1200x630_BLUE.png?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000039-d32f6d32f9/kuarzo.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000578-eacb3eacb5/Captura%20de%20pantalla%202026-04-06%20132618.png?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000490-c9a96c9a98/ChatGPT%20Image%2028%20oct%202025%2C%2009_16_54.png?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000488-b6a39b6a3b/ChatGPT%20Image%2028%20oct%202025%2C%2009_06_21.png?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000038-b5228b522a/nettv.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000167-0591605919/Telefe.png?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000494-53c4453c46/294589374_417082223778804_8661031369506965919_n.png?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000149-bc5adbc5ae/gran-hermano-2022-el-reality___9FXtYKoum_2000x1500__1.jpeg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000037-d481ad481c/urbana%20play-1.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000394-5abbb5abbe/THE%20BALLS%21.jpeg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000355-25ce025ce3/the-floor-el-trecejpg.jpeg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000231-5638556387/CSYXHHA-_400x400%20%281%29.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000105-3c0303c032/EMBAJADA%20DE%20ESPA%C3%91A.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000070-1fbc81fbc9/onceloops.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000135-6ce926ce94/STORY%20LAB.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000143-3988e39890/%E2%9C%93%20Agencia%20O%E2%80%99GRADY..jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000233-f0032f0033/images.png?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000227-0f1400f143/10B1AAA6-3DAA-40E8-AF8E-06FE7E186754.jpeg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000321-777ca777cc/Captura%20de%20pantalla%202023-08-03%20110914.png?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000141-6f6c56f6c7/PROASEG.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000041-c3398c3399/el%20ombu.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000173-13ec713ec8/1534792960872.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000225-19d0d19d0e/1647014778762.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000219-dc7dbdc7dc/IMG-20230328-WA0024.jpg?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000235-d547cd547d/logo-mudra-cabecera_GRANDE-01.png?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000175-2b6362b638/Captura.PNG?ph=4304814ec2',
+                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000323-92e9292e95/e5f63246-a545-4f64-9c59-8c8331f9cd6e.jpeg?ph=4304814ec2'
+                  ]"
+                ></grilla-clientes>
                 </div>
               </div>
         </div>
@@ -101,7 +135,6 @@ const Eventos = {
                 <div class="col-md-6 offset-md-3">
                       <h1 style="text-align: center;">Eventos</h1>
                       <div style="width: 5em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-                      <p class="lead"> (Pagina en construccion)⚒️</p>
                 </div>
               </div>
       </div>
@@ -133,8 +166,6 @@ const Contacto = {
               <div class="col-md-6 offset-md-3">
                   <h1 style="text-align: center;">Contacto</h1>
                   <div style="width: 7em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-
-
               </div>
             </div>
             <div class="row g-4 align-items-stretch">
@@ -291,5 +322,6 @@ app.component('ContactFormConTexto', ContactFormConTexto);
 app.component('Carrousel',           Carrousel);
 app.component('EventsCards',         EventsCards);
 app.component('FichaContacto', FichaContacto);
+app.component('GrillaClientes', GrillaClientes);
 
 app.mount('#app');
