@@ -6,22 +6,25 @@ const fichaStyles = `
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
     font-family: 'Lato', sans-serif;
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .ficha__inner {
     display: flex;
-    height: 100%;
+    flex: 1;
     min-height: 420px;
   }
 
   .ficha__mapa {
     flex: 1;
-    height: 100%;
     min-height: 300px;
-    height: auto;
+    position: relative;
   }
 
   .ficha__mapa iframe {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     border: none;
@@ -96,14 +99,16 @@ const fichaStyles = `
   @media (max-width: 768px) {
     .ficha__inner {
       flex-direction: column;
-      height: auto;
+      min-height: unset;
     }
     .ficha__datos {
       flex: none;
       order: -1;
     }
     .ficha__mapa {
-      height: 280px;
+      flex: none;
+      height: 320px;
+      min-height: unset;
     }
   }
 `;
@@ -119,7 +124,7 @@ const fichaStyles = `
 export default {
   name: 'FichaContacto',
   props: {
-    apikey:    { type: String, required: true                    },
+    apikey:    { type: String, required: true                     },
     direccion: { type: String, default: 'Buenos Aires, Argentina' },
   },
   computed: {
@@ -129,7 +134,7 @@ export default {
     },
   },
   template: `
-    <div class="ficha" style="padding:0; height:100%;padding: 0" >
+    <div class="ficha" style="padding:0;">
       <div class="ficha__inner">
 
         <div class="ficha__mapa">
@@ -142,7 +147,6 @@ export default {
         </div>
 
         <div class="ficha__datos">
-
           <div>
             <p class="ficha__titulo">Contacto</p>
             <div class="ficha__divider"></div>
@@ -192,8 +196,8 @@ export default {
               <a href="mailto:administracion@ironcleansa.com.es">administracion@ironcleansa.com.es</a>
             </span>
           </div>
-
         </div>
+
       </div>
     </div>
   `,
