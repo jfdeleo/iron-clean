@@ -137,7 +137,7 @@ const Contacto = {
 
               </div>
             </div>
-            <div class="row" style="height: 41rem;">
+            <div class="row g-4">
 
                               <ficha-contacto
                               class="col-md-6 offset-md-1"
