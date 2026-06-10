@@ -217,16 +217,46 @@ const Fotogaleria = {
 
 const HogarMariaLuisa = {
   template: `
-    <div class="container py-5">
+    <div class="container py-5" style="padding: 0px !important;">
       <div class="jumbotron">
                     <div class="row">
-                      <div class="col-md-6 offset-md-3">
-                          <h1 style="text-align: center;">Hogar Maria Luisa</h1>
-                          <div style="width: 15em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-                          <p class="lead"> (Pagina en construccion)⚒️</p>
-                      </div>
+                        <img src="https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000111-0f43a0f43c/hogar%20maria%20luisa.png?ph=4304814ec2" alt="" fetchpriority="high">
+                              <div style="color:white;background:rgb(13,27,42);margin-bottom:1em;font-family:'Lato',sans-serif;">
+                                <div class="container" style="padding:2em;">
+                                  <h1><strong style="font-size:2.5rem;font-family:'Playfair Display',serif;">IRON CLEAN S.A.</strong></h1>
+                                  <p style="font-size:1.4rem;">Agradece profundamente al Hogar María Luisa por brindarnos la oportunidad de colaborar y acompañar el valioso trabajo que realizan día a día todas las personas dedicadas al cuidado de jovenes y niños y al funcionamiento de este espacio tan importante.</p>
+                                </div>
+                              </div>
+                  </div>
                 </div>
-      </div>
+
+
+
+
+            <div class="row align-items-center g-4 justify-content-center">
+              <div class="col-12 col-md-4 d-flex justify-content-center">
+                <img
+                  src="https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000013-c9598c959b/Invoicelogo_logo-HML-RGB-01.png?ph=4304814ec2"
+                  alt=""
+                  loading="lazy"
+                  style="max-width: 100%; max-height: 100%; object-fit: contain;"
+                />
+              </div>
+              <div class="col-12 col-md-3">
+                <div style="position: relative; width: 100%; padding-bottom: 100%;">
+                  <iframe
+                    style="position: absolute; inset: 0; width: 100%; height: 100%;"
+                    src="https://www.youtube.com/embed/0QLUa9uSo5I?si=NatGsfNMUMn5qIzt"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+
+            </div>
     </div>
   `,
 };
