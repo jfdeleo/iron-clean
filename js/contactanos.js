@@ -129,7 +129,7 @@ export default {
     },
   },
   template: `
-    <div class="ficha" style="padding: 0">
+    <div class="ficha" style="padding:0; height:100%;padding: 0" >
       <div class="ficha__inner">
 
         <div class="ficha__mapa">

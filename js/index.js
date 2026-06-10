@@ -137,16 +137,15 @@ const Contacto = {
 
               </div>
             </div>
-            <div class="row g-4">
-
-                              <ficha-contacto
-                              class="col-md-6 offset-md-1"
-
-                                apikey="AIzaSyB_1RiBPpzx0T1rviCQjtlPvf2hhiTpJas"
-                                direccion="A. Moriondo 2941, Sáenz Peña, Provincia de Buenos Aires"
-                              ></ficha-contacto>
-                             <contact-form class="col-md-5" destinatario="franco15deleo@gmail.com"></contact-form>
-
+            <div class="row g-4 align-items-stretch">
+              <div class="col-12 col-md-6 offset-md-1" style="display:flex; flex-direction:column;">
+                <ficha-contacto
+                  style="flex: 1;"
+                  apikey="AIzaSyB_1RiBPpzx0T1rviCQjtlPvf2hhiTpJas"
+                  direccion="A. Moriondo 2941, Sáenz Peña, Provincia de Buenos Aires"
+                ></ficha-contacto>
+              </div>
+              <contact-form class="col-12 col-md-5" destinatario="franco15deleo@gmail.com"></contact-form>
             </div>
       </div>
     </div>
