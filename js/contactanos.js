@@ -18,6 +18,7 @@ const fichaStyles = `
     flex: 1;
     height: 100%;
     min-height: 300px;
+    height: auto;
   }
 
   .ficha__mapa iframe {
