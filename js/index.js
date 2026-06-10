@@ -233,30 +233,93 @@ const HogarMariaLuisa = {
 
 
 
-            <div class="row align-items-center g-4 justify-content-center">
-              <div class="col-12 col-md-4 d-flex justify-content-center">
-                <img
-                  src="https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000013-c9598c959b/Invoicelogo_logo-HML-RGB-01.png?ph=4304814ec2"
-                  alt=""
-                  loading="lazy"
-                  style="max-width: 100%; max-height: 100%; object-fit: contain;"
-                />
-              </div>
-              <div class="col-12 col-md-3">
-                <div style="position: relative; width: 100%; padding-bottom: 100%;">
-                  <iframe
-                    style="position: absolute; inset: 0; width: 100%; height: 100%;"
-                    src="https://www.youtube.com/embed/0QLUa9uSo5I?si=NatGsfNMUMn5qIzt"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
+        <div class="row align-items-center g-4 justify-content-center bg-transparent">
 
+          <div class="col-12 col-md-5 d-flex flex-column align-items-center">
+
+            <img
+              src="https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000013-c9598c959b/Invoicelogo_logo-HML-RGB-01.png?ph=4304814ec2"
+              alt="Hogar María Luisa"
+              loading="lazy"
+              class="mb-4"
+              style="max-width: 100%; max-height: 100%; object-fit: contain;"
+            />
+
+            <div class="text-center w-100">
+              <h5 class="mb-3">Seguinos en nuestras redes sociales</h5>
+              <div class="d-flex justify-content-center flex-wrap gap-2">
+                <a
+                  href="https://www.facebook.com/HogarMariaLuisa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary d-flex align-items-center gap-2 shadow-sm"
+                  style="background-color: #1877F2; border-color: #1877F2;">
+                  <i class="bi bi-facebook"></i> Facebook
+                </a>
+
+                <a
+                  href="https://www.instagram.com/hogardeninosmarialuisa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-danger d-flex align-items-center gap-2 shadow-sm text-white"
+                  style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border: none;">
+                  <i class="bi bi-instagram"></i> Instagram
+                </a>
+              </div>
             </div>
+
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div style="position: relative; width: 100%; padding-bottom: 100%;">
+              <iframe
+                style="position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 8px;"
+                src="https://www.youtube.com/embed/0QLUa9uSo5I?si=NatGsfNMUMn5qIzt"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+                  <div class="container d-flex justify-content-center py-4 bg-transparent">
+                    <div class="card shadow-sm border-0 bg-white" style="width: 100%; border-radius: 12px; overflow: hidden;">
+                      <div class="row g-0 align-items-center">
+
+                        <div class="col-4 text-center py-4" style="background-color: #f8f9fa; min-height: 100%;">
+                          <i class="bi bi-person-vcard text-primary" style="font-size: 3.5rem;"></i>
+                        </div>
+
+                        <div class="col-8">
+                          <div class="card-body p-4 text-start">
+                            <h4 class="card-title fw-bold mb-1">Contacto</h4>
+                            <h5 class="text-secondary fw-semibold mb-3">Karina Tursi</h5>
+
+                            <div class="mb-2 d-flex align-items-center gap-2">
+                              <i class="bi bi-telephone-fill text-primary"></i>
+                              <a href="tel:+541140748247" class="text-decoration-none text-dark fs-5">
+                                (+54 11) 40748247
+                              </a>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2">
+                              <i class="bi bi-globe text-primary"></i>
+                              <a href="https://www.hogarmarialuisa.org" target="_blank" rel="noopener noreferrer" class="text-decoration-none fw-medium">
+                                www.hogarmarialuisa.org
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+           </div>
+
+        </div>
+
     </div>
   `,
 };
