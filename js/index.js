@@ -137,13 +137,11 @@ const Contacto = {
 
               </div>
             </div>
-            <div class="row">
+            <div class="row" style="height: 41rem;">
 
                               <ficha-contacto
                               class="col-md-6 offset-md-1"
-                              style="
-                                  height: 100%;
-                              "
+
                                 apikey="AIzaSyB_1RiBPpzx0T1rviCQjtlPvf2hhiTpJas"
                                 direccion="A. Moriondo 2941, Sáenz Peña, Provincia de Buenos Aires"
                               ></ficha-contacto>
