@@ -11,6 +11,9 @@ import Carrousel            from './carrousel.js';
 import EventsCards          from './eventsCards.js';
 import FichaContacto from './contactanos.js';
 import GrillaClientes from './nuestrosClientes.js';
+import FormCV from './enviarCv.js';
+import ServiciosGrid from './servicios.js';
+
 
 
 // ── Páginas ───────────────────────────────────────────────────────────────────
@@ -60,6 +63,7 @@ const Nosotros = {
                   <h1 style="text-align: center;">Nosotros</h1>
                   <div style="width: 8em !important;margin-left:auto;margin-right:auto;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
                     <p class="lead"> (Pagina en construccion)⚒️</p>
+                    <p class="lead"><strong> (Revisar si no es redundante con el inicio)</strong>️</p>
                 </div>
               </div>
         </div>
@@ -73,9 +77,16 @@ const NuestroEquipo = {
         <div class="col-md-6 offset-md-3">
           <h1 style="text-align: center;">Nuestro Equipo</h1>
           <div style="width: 12em !important;margin-left:auto;margin-right:auto;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+          <p class="lead"><strong> (Rediseñar -> Revisar si no es redundante con el inicio)</strong>️</p>
           <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width:50rem;margin-top:35px;"/>
         </div>
       </div>
+        <form-c-v
+         style="margin-top: 2em;
+          destinatario="franc15deleo@gmail.com"
+          :whatsapp="true"
+          wanumero="5491164692357"
+        ></form-c-v>
     </div>
   `,
 };
@@ -152,6 +163,7 @@ const Eventos = {
           ></events-cards>
         </div>
       </div>
+            <contact-form class="col-12 col-md-5" style="margin-top: 2em;" destinatario="franco15deleo@gmail.com"></contact-form>
     </div>
   `,
 };
@@ -185,17 +197,35 @@ const Contacto = {
 
 const Covid = {
   template: `
-    <div class="container py-5">
-      <div class="jumbotron">
-                    <div class="row">
-                      <div class="col-md-6 offset-md-3">
-                          <h1 style="text-align: center;">Covid-19</h1>
-                          <div style="width: 7em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-                          <p class="lead"> (Pagina en construccion)⚒️</p>
-                      </div>
-                    </div>
+      <div class="row" style="margin: 0;">
+        <img style="padding-right: 0; width: 100%;" src="https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000503-53a9753a99/nuestROS%20CLIENTES%20%282%29.webp?ph=4304814ec2" alt="" fetchpriority="high">
+
+        <div style="color:white;background:rgb(13,27,42);margin-bottom:1em;font-family:'Lato',sans-serif;">
+          <div class="container" style="padding:2em;">
+            <h1><strong style="font-size:2.5rem;font-family:'Playfair Display',serif;">Covid-19</strong></h1>
+            <p style="font-size:1.4rem;">Con el sistema de desinfección de IRON CLEAN, garantizás ambientes más higiénicos y protegidos, listos para la actividad diaria.</p>
+          </div>
+        </div>
+
+        <servicios-grid
+          class="col-10 offset-1 g-1"
+          :items="[
+            { label: 'Oficinas',  img: 'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000195-2098120983/WhatsApp%20Image%202021-09-01%20at%209.15.28%20PM.webp?ph=4304814ec2',  link: '#/servicios' },
+            { label: 'Camiones',  img: 'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000188-e5c57e5c59/WhatsApp%20Image%202021-09-02%20at%201.10.09%20PM-9.webp?ph=4304814ec2',  link: '#/servicios' },
+            { label: 'Empresas',  img: 'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000196-acf35acf36/WhatsApp%20Image%202021-09-01%20at%209.15.28%20PM%20%281%29-8.webp?ph=4304814ec2',  link: '#/servicios' },
+            { label: 'Galpones',  img: 'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000197-e45d4e45d6/WhatsApp%20Image%202021-09-01%20at%201.36.28%20PM-4.webp?ph=4304814ec2',  link: '#/servicios' },
+          ]"
+        ></servicios-grid>
+
+        <div class="col-sm-6 col-md-8 offset-sm-1 offset-md-2" style="margin-top: 2em;">
+          <img
+            style="width: 100%;"
+            src="https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000091-334e8334ea/iron%20clean2.0.png?ph=4304814ec2"
+            alt=""
+            loading="lazy"
+          />
+        </div>
       </div>
-    </div>
   `,
 };
 
@@ -204,12 +234,27 @@ const Fotogaleria = {
     <div class="container py-5">
       <div class="jumbotron">
               <div class="row">
-                 <div class="col-md-6 offset-md-3">
-                  <h1 style="text-align: center;">Fotogaleria</h1>
-                  <div style="width: 10em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-                  <p class="lead"> (Pagina en construccion)⚒️</p>
+                <div class="col-md-6 offset-md-3">
+                      <h1 style="text-align: center;">Fotogaleria</h1>
+                      <div style="width: 5em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+                      <p class="lead"> (Pagina en construccion)⚒️</p>
+                      <p class="lead"> (Nuevo banner svg?)⚒️</p>
+                </div>
               </div>
-            </div>
+      </div>
+      <div class="row g-4">
+        <div
+          v-for="(evento, i) in $root.eventos"
+          :key="i"
+          style="height: 30em;"
+          class="col-12 col-sm-6 col-md-4 col-lg-3"
+        >
+          <events-cards
+            :titulo="evento.titulo"
+            :descripcion="evento.descripcion"
+            :fotos="evento.fotos"
+          ></events-cards>
+        </div>
       </div>
     </div>
   `,
@@ -225,10 +270,10 @@ const HogarMariaLuisa = {
                                 <div class="container" style="padding:2em;">
                                   <h1><strong style="font-size:2.5rem;font-family:'Playfair Display',serif;">IRON CLEAN S.A.</strong></h1>
                                   <p style="font-size:1.4rem;">Agradece profundamente al Hogar María Luisa por brindarnos la oportunidad de colaborar y acompañar el valioso trabajo que realizan día a día todas las personas dedicadas al cuidado de jovenes y niños y al funcionamiento de este espacio tan importante.</p>
-                                </div>
+                                 </div>
                               </div>
-                  </div>
-                </div>
+                    </div>
+        </div>
 
 
 
@@ -320,8 +365,9 @@ const HogarMariaLuisa = {
 
      </div>
 
+        <p class="lead"> (Pagina en construccion)⚒️</p>
+        <p class="lead"> (Nuevo banner svg?)⚒️</p>
         </div>
-
     </div>
   `,
 };
@@ -418,5 +464,7 @@ app.component('Carrousel',           Carrousel);
 app.component('EventsCards',         EventsCards);
 app.component('FichaContacto', FichaContacto);
 app.component('GrillaClientes', GrillaClientes);
+app.component('FormCV', FormCV);
+app.component('ServiciosGrid', ServiciosGrid);
 
 app.mount('#app');

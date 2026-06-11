@@ -48,6 +48,13 @@ const grillaStyles = `
     filter: grayscale(0%);
     opacity: 1;
   }
+
+  @media (max-width: 640px) {
+    .grilla-clientes__item {
+      width: 100% !important;
+      aspect-ratio: 16/9 !important;
+    }
+  }
 `;
 
 (function() {
@@ -66,7 +73,6 @@ export default {
     columnas: { type: Number, default: 5   },
   },
   computed: {
-    // Ancho de cada item basado en el número de columnas
     estiloItem() {
       const pct = (100 / this.columnas) - 1;
       return { width: `calc(${pct}% - 0.5rem)`, aspectRatio: '4/3' };
