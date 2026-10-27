@@ -88,7 +88,7 @@ const NuestroEquipo = {
          style="margin-top: 2em;
           destinatario="franc15deleo@gmail.com"
           :whatsapp="true"
-          wanumero="5491164692357"
+          wanumero="5491160371192"
         ></form-c-v>
     </div>
   `,
@@ -379,7 +379,7 @@ const HogarMariaLuisa = {
 
                    <div class="mb-2 d-flex align-items-center gap-2">
                      <i class="bi bi-telephone-fill text-primary"></i>
-                     <a href="tel:+541140748247" class="text-decoration-none text-dark fs-5">
+                     <a href="tel:+5491160371192" class="text-decoration-none text-dark fs-5">
                        (+54 11) 40748247
                      </a>
                    </div>

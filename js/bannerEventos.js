@@ -145,7 +145,7 @@ export default {
         },
         botonLink: {
             type: String,
-            default: 'https://wa.me/5491151956458?text=' +
+            default: 'https://wa.me/5491160371192?text=' +
                 encodeURIComponent('¡Hola! Me gustaria obtener un presupuesto')
         }
     },
