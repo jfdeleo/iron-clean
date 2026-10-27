@@ -11,6 +11,9 @@ import Carrousel            from './carrousel.js';
 import EventsCards          from './eventsCards.js';
 import FichaContacto from './contactanos.js';
 import GrillaClientes from './nuestrosClientes.js';
+import EventosDestacados from './eventosDestacados.js';
+import EventTypes from './tiposDeEventos.js';
+import EventBanner from './bannerEventos.js';
 import FormCV from './enviarCv.js';
 import ServiciosGrid from './servicios.js';
 
@@ -93,7 +96,7 @@ const NuestroEquipo = {
 
 
 const NuestrosClientes = {
-  template: `<div class="container py-5">
+  template: `<!--<div class="container py-5">-->
         <div class="jumbotron">
               <div class="row">
                 <div class="col-md-6 offset-md-3">
@@ -140,30 +143,62 @@ const NuestrosClientes = {
 
 const Eventos = {
   template: `
-    <div class="container py-5">
-      <div class="jumbotron">
-              <div class="row">
-                <div class="col-md-6 offset-md-3">
-                      <h1 style="text-align: center;">Eventos</h1>
-                      <div style="width: 5em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-                </div>
-              </div>
-      </div>
-      <div class="row g-4">
-        <div
-          v-for="(evento, i) in $root.eventos"
-          :key="i"
-          style="height: 30em;"
-          class="col-12 col-sm-6 col-md-4 col-lg-3"
-        >
-          <events-cards
-            :titulo="evento.titulo"
-            :descripcion="evento.descripcion"
-            :fotos="evento.fotos"
-          ></events-cards>
-        </div>
-      </div>
-            <contact-form class="col-12 col-md-5" style="margin-top: 2em;" destinatario="franco15deleo@gmail.com"></contact-form>
+    <div class="container py-5" style="padding-top: 1% !important;">
+    <EventBanner image-src="img/imagenes-eventos/banner-eventos.svg" style="border-radius: 1.2rem;" />
+      <eventos-destacados
+          style="margin-top: 2%;"
+          titulo="Eventos destacados"
+          :eventos="[
+              {
+                'imagen': 'img/imagenes-eventos/Mafalda.png',
+                'imagenes': ['img/imagenes-eventos/img1.png', 'img/imagenes-eventos/img2.png'],
+                'titulo': 'Mafalda Inmersiva',
+                'subtitulo': 'Centro Cultural Recoleta'
+              },
+              {
+                'imagen': 'img/imagenes-eventos/FIT.png',
+                'imagenes': ['img/imagenes-eventos/img1.png', 'img/imagenes-eventos/img2.png'],
+                'titulo': 'FIT América Latina',
+                'subtitulo': 'La Rural'
+              },
+              {
+                'imagen': 'img/imagenes-eventos/Mafalda.png',
+                'imagenes': ['img/imagenes-eventos/img1.png', 'img/imagenes-eventos/img2.png'],
+                'titulo': 'FIT América Latina',
+                'subtitulo': 'La Rural'
+              },
+                            {
+                'imagen': 'img/imagenes-eventos/FIT.png',
+                'imagenes': ['img/imagenes-eventos/img1.png', 'img/imagenes-eventos/img2.png'],
+                'titulo': 'FIT América Latina',
+                'subtitulo': 'La Rural'
+              },              {
+                'imagen': 'img/imagenes-eventos/Mafalda.png',
+                'imagenes': ['img/imagenes-eventos/img1.png', 'img/imagenes-eventos/img2.png'],
+                'titulo': 'FIT América Latina',
+                'subtitulo': 'La Rural'
+              },
+              {
+                'imagen': 'img/imagenes-eventos/FIT.png',
+                'imagenes': ['img/imagenes-eventos/img1.png', 'img/imagenes-eventos/img2.png'],
+                'titulo': 'FIT América Latina',
+                'subtitulo': 'La Rural'
+              },
+              {
+                'imagen': 'img/imagenes-eventos/Mafalda.png',
+                'imagenes': ['img/imagenes-eventos/img1.png', 'img/imagenes-eventos/img2.png'],
+                'titulo': 'FIT América Latina',
+                'subtitulo': 'La Rural'
+              },
+              {
+                'imagen': 'img/imagenes-eventos/FIT.png',
+                'imagenes': ['img/imagenes-eventos/img1.png', 'img/imagenes-eventos/img2.png'],
+                'titulo': 'FIT América Latina',
+                'subtitulo': 'La Rural'
+              }                       
+            ]"
+      ></eventos-destacados>
+      <EventTypes style="margin-top: 4%;"/>
     </div>
   `,
 };
@@ -466,5 +501,8 @@ app.component('FichaContacto', FichaContacto);
 app.component('GrillaClientes', GrillaClientes);
 app.component('FormCV', FormCV);
 app.component('ServiciosGrid', ServiciosGrid);
+app.component('EventosDestacados', EventosDestacados);
+app.component('EventTypes', EventTypes);
+app.component('EventBanner', EventBanner);
 
 app.mount('#app');
