@@ -16,6 +16,8 @@ import EventTypes from './tiposDeEventos.js';
 import EventBanner from './bannerEventos.js';
 import FormCV from './enviarCv.js';
 import ServiciosGrid from './servicios.js';
+import ExperienciaSeccion from './textoEventos.js'
+
 
 
 
@@ -49,8 +51,38 @@ const Home = {
 
       <contact-form-con-texto style="margin:1em;" destinatario="franco15deleo@gmail.com" bgimg="./img/img.png"></contact-form-con-texto>
 
-      <carrousel
-        :fotos="['./img/prueba/img1.png','./img/prueba/img2.png','./img/prueba/img3.png','./img/prueba/img4.png','./img/prueba/img5.png','./img/prueba/img6.png']"
+       <carrousel
+        :fotos="[
+          './img/clientes/img (1).jpeg',
+          './img/clientes/img (2).jpeg',
+          './img/clientes/img (3).jpeg',
+          './img/clientes/img (4).jpeg',
+          './img/clientes/img (5).jpeg',
+          './img/clientes/img (6).jpeg',
+          './img/clientes/img (7).jpeg',
+          './img/clientes/img (8).jpeg',
+          './img/clientes/img (9).jpeg',
+          './img/clientes/img (10).jpeg',
+          './img/clientes/img (11).jpeg',
+          './img/clientes/img (12).jpeg',
+          './img/clientes/img (13).jpeg',
+          './img/clientes/img (14).jpeg',
+          './img/clientes/img (15).jpeg',
+          './img/clientes/img (16).jpeg',
+          './img/clientes/img (17).jpeg',
+          './img/clientes/img (18).jpeg',
+          './img/clientes/img (19).jpeg',
+          './img/clientes/img (20).jpeg',
+          './img/clientes/img (21).jpeg',
+          './img/clientes/img (22).jpeg',
+          './img/clientes/img (23).jpeg',
+          './img/clientes/img (24).jpeg',
+          './img/clientes/img (25).jpeg',
+          './img/clientes/img (26).jpeg',
+          './img/clientes/img (27).jpeg',
+          './img/clientes/img (28).jpeg',
+          './img/clientes/img (29).jpeg',
+]"
         :visibles="6"
         :velocidad="60"
       ></carrousel>
@@ -145,6 +177,11 @@ const Eventos = {
   template: `
     <div class="container py-5" style="padding-top: 1% !important;">
     <EventBanner image-src="img/imagenes-eventos/banner-eventos.svg" style="border-radius: 1.2rem;" />
+       <experiencia-seccion
+      etiqueta="Nuestra historia"
+      titulo="Más que limpieza, | acompañamos grandes | experiencias"
+      texto="Contamos con amplia experiencia en eventos culturales, corporativos, exposiciones, desfiles y producciones especiales, brindando servicios de limpieza con altos estándares de calidad y supervisión permanente.."
+    ></experiencia-seccion> 
       <eventos-destacados
           style="margin-top: 2%;"
           titulo="Eventos destacados"
@@ -199,6 +236,41 @@ const Eventos = {
             ]"
       ></eventos-destacados>
       <EventTypes style="margin-top: 4%;"/>
+       <carrousel
+        :fotos="[
+          './img/clientes/img (1).jpeg',
+          './img/clientes/img (2).jpeg',
+          './img/clientes/img (3).jpeg',
+          './img/clientes/img (4).jpeg',
+          './img/clientes/img (5).jpeg',
+          './img/clientes/img (6).jpeg',
+          './img/clientes/img (7).jpeg',
+          './img/clientes/img (8).jpeg',
+          './img/clientes/img (9).jpeg',
+          './img/clientes/img (10).jpeg',
+          './img/clientes/img (11).jpeg',
+          './img/clientes/img (12).jpeg',
+          './img/clientes/img (13).jpeg',
+          './img/clientes/img (14).jpeg',
+          './img/clientes/img (15).jpeg',
+          './img/clientes/img (16).jpeg',
+          './img/clientes/img (17).jpeg',
+          './img/clientes/img (18).jpeg',
+          './img/clientes/img (19).jpeg',
+          './img/clientes/img (20).jpeg',
+          './img/clientes/img (21).jpeg',
+          './img/clientes/img (22).jpeg',
+          './img/clientes/img (23).jpeg',
+          './img/clientes/img (24).jpeg',
+          './img/clientes/img (25).jpeg',
+          './img/clientes/img (26).jpeg',
+          './img/clientes/img (27).jpeg',
+          './img/clientes/img (28).jpeg',
+          './img/clientes/img (29).jpeg',
+]"
+        :visibles="6"
+        :velocidad="60"
+      ></carrousel>
     </div>
   `,
 };
@@ -504,5 +576,6 @@ app.component('ServiciosGrid', ServiciosGrid);
 app.component('EventosDestacados', EventosDestacados);
 app.component('EventTypes', EventTypes);
 app.component('EventBanner', EventBanner);
+app.component('experiencia-seccion', ExperienciaSeccion)
 
 app.mount('#app');

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9384e3b3-4d80-43ab-a8fa-5a601b8af634" name="Changes" comment="WIP">
+      <change afterPath="$PROJECT_DIR$/js/textoEventos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/prueba/img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/prueba/img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/prueba/img3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/prueba/img4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/prueba/img5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/prueba/img6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feat/home" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jfdeleo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jfdeleo/iron-clean.git&quot;,
+    &quot;accountId&quot;: &quot;69469a6e-3d09-4029-89c9-48ddcd42d050&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3CdfffAMF1YjI5r3jRVDfBVTRfB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Franco/IdeaProjects/iron-clean/img/clientes",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\img\clientes" />
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\img\imagenes-eventos" />
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\img\prueba" />
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean" />
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\images" />
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\js" />
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\iron-clean" />
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="iron-clean" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="iron-clean" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9384e3b3-4d80-43ab-a8fa-5a601b8af634" name="Changes" comment="" />
+      <created>1776720472219</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776720472219</updated>
+      <workItem from="1776720487097" duration="264000" />
+      <workItem from="1776720771635" duration="24000" />
+      <workItem from="1776720828820" duration="7048000" />
+      <workItem from="1776899654070" duration="2785000" />
+      <workItem from="1779402940637" duration="6000" />
+      <workItem from="1792708922715" duration="2595000" />
+      <workItem from="1793062595657" duration="3402000" />
+      <workItem from="1793066203718" duration="3755000" />
+      <workItem from="1793141373825" duration="635000" />
+      <workItem from="1793154391456" duration="2019000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1776720929094</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776720929094</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1776724609222</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776724609222</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Componente navbar y formulario">
+      <option name="closed" value="true" />
+      <created>1779407032426</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1779407032426</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Componente cards y banner.js">
+      <option name="closed" value="true" />
+      <created>1779415030283</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779415030283</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ajustes de estilado">
+      <option name="closed" value="true" />
+      <created>1780528621610</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780528621610</updated>
+    </task>
+    <task id="LOCAL-00006" summary="OJO: Añado vue-router">
+      <option name="closed" value="true" />
+      <created>1780529224380</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780529224380</updated>
+    </task>
+    <task id="LOCAL-00007" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1780531260398</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1780531260398</updated>
+    </task>
+    <task id="LOCAL-00008" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1780531501645</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780531501645</updated>
+    </task>
+    <task id="LOCAL-00009" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1780531963140</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1780531963140</updated>
+    </task>
+    <task id="LOCAL-00010" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1780532107172</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1780532107172</updated>
+    </task>
+    <task id="LOCAL-00011" summary="WIP - Mica en casa">
+      <option name="closed" value="true" />
+      <created>1780621723936</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1780621723936</updated>
+    </task>
+    <task id="LOCAL-00012" summary="WIP - Mica en casa">
+      <option name="closed" value="true" />
+      <created>1780624172657</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1780624172657</updated>
+    </task>
+    <task id="LOCAL-00013" summary="WIP - Mica en casa">
+      <option name="closed" value="true" />
+      <created>1780627527509</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1780627527509</updated>
+    </task>
+    <task id="LOCAL-00014" summary="WIP - Mica en casa">
+      <option name="closed" value="true" />
+      <created>1780627962182</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1780627962182</updated>
+    </task>
+    <task id="LOCAL-00015" summary="centrado y ajustado para la vista mobile - queda raro en mobile sin titulo ni nada">
+      <option name="closed" value="true" />
+      <created>1780699508880</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1780699508880</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Wip galeria">
+      <option name="closed" value="true" />
+      <created>1780702849163</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1780702849163</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Router">
+      <option name="closed" value="true" />
+      <created>1780703854519</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1780703854519</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Wip estilos">
+      <option name="closed" value="true" />
+      <created>1781047835390</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1781047835390</updated>
+    </task>
+    <task id="LOCAL-00019" summary="prueba mapa">
+      <option name="closed" value="true" />
+      <created>1781049460559</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1781049460559</updated>
+    </task>
+    <task id="LOCAL-00020" summary="prueba mapa">
+      <option name="closed" value="true" />
+      <created>1781050919909</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1781050919909</updated>
+    </task>
+    <task id="LOCAL-00021" summary="prueba mapa">
+      <option name="closed" value="true" />
+      <created>1781051465929</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1781051465929</updated>
+    </task>
+    <task id="LOCAL-00022" summary="prueba mapa">
+      <option name="closed" value="true" />
+      <created>1781051567229</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1781051567229</updated>
+    </task>
+    <task id="LOCAL-00023" summary="prueba mapa">
+      <option name="closed" value="true" />
+      <created>1781051930518</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1781051930518</updated>
+    </task>
+    <task id="LOCAL-00024" summary="prueba mapa">
+      <option name="closed" value="true" />
+      <created>1781052387285</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1781052387285</updated>
+    </task>
+    <task id="LOCAL-00025" summary="prueba mapa">
+      <option name="closed" value="true" />
+      <created>1781052617030</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1781052617030</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Wip, nuestros clientes">
+      <option name="closed" value="true" />
+      <created>1781053761296</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1781053761296</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Wip, nuestros clientes">
+      <option name="closed" value="true" />
+      <created>1781055740593</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1781055740593</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Wip hogar">
+      <option name="closed" value="true" />
+      <created>1781056436323</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1781056436323</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Wip hogar">
+      <option name="closed" value="true" />
+      <created>1781056705273</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1781056705273</updated>
+    </task>
+    <task id="LOCAL-00030" summary="primera version">
+      <option name="closed" value="true" />
+      <created>1781136072759</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1781136072759</updated>
+    </task>
+    <task id="LOCAL-00031" summary="primera version">
+      <option name="closed" value="true" />
+      <created>1781136195973</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1781136195973</updated>
+    </task>
+    <task id="LOCAL-00032" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1793068401105</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1793068401105</updated>
+    </task>
+    <task id="LOCAL-00033" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1793068697719</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1793068697719</updated>
+    </task>
+    <task id="LOCAL-00034" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1793069989365</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1793069989365</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Componente navbar y formulario" />
+    <MESSAGE value="Componente cards y banner.js" />
+    <MESSAGE value="Ajustes de estilado" />
+    <MESSAGE value="OJO: Añado vue-router" />
+    <MESSAGE value="WIP - Mica en casa" />
+    <MESSAGE value="centrado y ajustado para la vista mobile - queda raro en mobile sin titulo ni nada" />
+    <MESSAGE value="Wip galeria" />
+    <MESSAGE value="Router" />
+    <MESSAGE value="Wip estilos" />
+    <MESSAGE value="prueba mapa" />
+    <MESSAGE value="Wip, nuestros clientes" />
+    <MESSAGE value="Wip hogar" />
+    <MESSAGE value="primera version" />
+    <MESSAGE value="WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/index.js</url>
+          <line>281</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/footer.js</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/footer.js</url>
+          <line>163</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/index.js</url>
+          <line>189</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
