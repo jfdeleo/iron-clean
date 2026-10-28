@@ -17,6 +17,9 @@ import EventBanner from './bannerEventos.js';
 import FormCV from './enviarCv.js';
 import ServiciosGrid from './servicios.js';
 import ExperienciaSeccion from './textoEventos.js'
+import CtaEvento from './ContactanosEventos.js'
+
+
 
 
 
@@ -128,7 +131,7 @@ const NuestroEquipo = {
 
 
 const NuestrosClientes = {
-  template: `<!--<div class="container py-5">-->
+  template: `<div class="container py-5">
         <div class="jumbotron">
               <div class="row">
                 <div class="col-md-6 offset-md-3">
@@ -175,7 +178,7 @@ const NuestrosClientes = {
 
 const Eventos = {
   template: `
-    <div class="container py-5" style="padding-top: 1% !important;">
+    <div class="container py-5" style="padding-top: 1% !important;padding-bottom: 0 !important;">
     <EventBanner image-src="img/imagenes-eventos/banner-eventos.svg" style="border-radius: 1.2rem;" />
        <experiencia-seccion
       etiqueta="Nuestra historia"
@@ -271,6 +274,7 @@ const Eventos = {
         :visibles="6"
         :velocidad="60"
       ></carrousel>
+      <cta-evento style="border-radius: 1em;"></cta-evento>
     </div>
   `,
 };
@@ -512,10 +516,10 @@ const app = createApp({
       logoSrc: null,
       navItems: [
         { name: 'Inicio',            link: '#/'          },
+        { name: 'Eventos',           link: '#/eventos'   },
         { name: 'Sobre nosotros',    link: '#/sobre-nosotros'  },
         { name: 'Nuestro equipo',    link: '#/nuestro-equipo' },
         { name: 'Nuestros clientes', link: '#/nuestros-clientes'          },
-        { name: 'Eventos',           link: '#/eventos'   },
         { name: 'Contacto',          link: '#/contacto'  },
       ],
       dropdowns: [
@@ -577,5 +581,6 @@ app.component('EventosDestacados', EventosDestacados);
 app.component('EventTypes', EventTypes);
 app.component('EventBanner', EventBanner);
 app.component('experiencia-seccion', ExperienciaSeccion)
+app.component('cta-evento', CtaEvento)
 
 app.mount('#app');
