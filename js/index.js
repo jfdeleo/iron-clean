@@ -94,17 +94,13 @@ const Home = {
 };
 
 const Nosotros = {
-  template: `<div class="container py-5">
-        <div class="jumbotron">
-              <div class="row">
-                <div class="col-md-6 offset-md-3">
-                  <h1 style="text-align: center;">Nosotros</h1>
-                  <div style="width: 8em !important;margin-left:auto;margin-right:auto;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-                    <p class="lead"> (Pagina en construccion)⚒️</p>
-                    <p class="lead"><strong> (Revisar si no es redundante con el inicio)</strong>️</p>
-                </div>
-              </div>
-        </div>
+  template: `<div class="container py-5" style="padding-top: 1% !important;padding-bottom: 0 !important;">
+          <EventBanner  image-src="img/imagenes-banners/banner-en-construccion.svg" 
+          titulo="Comprometidos con un entorno más limpio y seguro"
+          descripcion="En Iron Clean SA  trabajamos para ofrecer soluciones de limpieza industrial que aportan valor, seguridad y sostenibilidad a nuestro clientes"
+          botonTexto="Conocé nuestra historia"
+          titulo="Comprometidos con un entorno más limpio y seguro"
+          style="border-radius: 1.2rem;" />
         </div>`,
 };
 
@@ -120,7 +116,7 @@ const NuestroEquipo = {
         </div>
       </div>
         <form-c-v
-         style="margin-top: 2em;
+         style="margin-top: 2em;"
           destinatario="franc15deleo@gmail.com"
           :whatsapp="true"
           wanumero="5491160371192"
@@ -179,7 +175,7 @@ const NuestrosClientes = {
 const Eventos = {
   template: `
     <div class="container py-5" style="padding-top: 1% !important;padding-bottom: 0 !important;">
-    <EventBanner image-src="img/imagenes-eventos/banner-eventos.svg" style="border-radius: 1.2rem;" />
+    <EventBanner image-src="img/imagenes-banners/banner-eventos.svg" style="border-radius: 1.2rem;" />
        <experiencia-seccion
       etiqueta="Nuestra historia"
       titulo="Más que limpieza, | acompañamos grandes | experiencias"

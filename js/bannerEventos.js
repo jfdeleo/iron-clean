@@ -1,15 +1,15 @@
-
 const eventBannerStyles = `
   .event-banner {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 320px;
+    height: 28em;
     box-sizing: border-box;
     overflow: hidden;
     background-color: #094974;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
@@ -21,9 +21,9 @@ const eventBannerStyles = `
     background: linear-gradient(
       90deg,
       rgba(4, 37, 59, 0.92) 0%,
-      rgba(4, 37, 59, 0.78) 35%,
-      rgba(4, 37, 59, 0.15) 75%,
-      transparent 100%
+      rgba(4, 37, 59, 0.78) calc(var(--eb-content-w, 620px) * 0.68),
+      rgba(4, 37, 59, 0.15) calc(var(--eb-content-w, 620px) * 1.45),
+      transparent calc(var(--eb-content-w, 620px) * 1.9)
     );
     pointer-events: none;
   }
@@ -32,7 +32,7 @@ const eventBannerStyles = `
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 620px;
+    max-width: var(--eb-content-w, 620px);
     padding: 40px 5%;
     box-sizing: border-box;
   }
@@ -44,6 +44,7 @@ const eventBannerStyles = `
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: -0.025em;
+    overflow-wrap: break-word;
   }
 
   .event-banner__description {
@@ -51,6 +52,7 @@ const eventBannerStyles = `
     font-size: clamp(15px, 1.5vw, 21px);
     line-height: 1.45;
     font-weight: 400;
+    overflow-wrap: break-word;
   }
 
   .event-banner__button {
@@ -81,10 +83,6 @@ const eventBannerStyles = `
   }
 
   @media (min-width: 1000px) {
-    .event-banner {
-      min-height: 360px;
-    }
-
     .event-banner__content {
       padding-left: 5.2%;
     }
@@ -92,7 +90,6 @@ const eventBannerStyles = `
 
   @media (max-width: 640px) {
     .event-banner {
-      min-height: 340px;
       background-position: 60% center;
     }
 
@@ -101,15 +98,16 @@ const eventBannerStyles = `
     }
 
     .event-banner__content {
-      padding: 32px 24px;
+      max-width: 100%;
+      padding: 24px;
     }
 
     .event-banner__title {
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .event-banner__description {
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
   }
 `;
@@ -131,6 +129,11 @@ export default {
             type: String,
             default: ''
         },
+        // Ancho inicial (px) del bloque de texto
+        anchoBase: {
+            type: Number,
+            default: 620
+        },
         titulo: {
             type: String,
             default: 'Eventos, ferias y exposiciones'
@@ -150,16 +153,62 @@ export default {
         }
     },
 
+    computed: {
+        bannerStyle() {
+            const style = {};
+            if (this.imageSrc) {
+                style.backgroundImage = 'url(' + JSON.stringify(this.imageSrc) + ')';
+            }
+            return style;
+        }
+    },
+
+    methods: {
+        // Ensancha el bloque de texto hasta que entre en el alto del banner.
+        // El alto del banner nunca cambia, así que no hay bucle.
+        ajustarTexto() {
+            const el = this.$refs.banner;
+            const contenido = this.$refs.contenido;
+            if (!el || !contenido) return;
+
+            const anchoBanner = el.clientWidth;
+            let w = Math.min(this.anchoBase, anchoBanner);
+            el.style.setProperty('--eb-content-w', w + 'px');
+
+            while (contenido.offsetHeight > el.clientHeight && w < anchoBanner) {
+                w = Math.min(anchoBanner, w + 40);
+                el.style.setProperty('--eb-content-w', w + 'px');
+            }
+        }
+    },
+
+    mounted() {
+        this.ajustarTexto();
+        if (typeof ResizeObserver !== 'undefined') {
+            this._observer = new ResizeObserver(this.ajustarTexto);
+            this._observer.observe(this.$refs.banner);
+        } else {
+            window.addEventListener('resize', this.ajustarTexto);
+        }
+    },
+
+    watch: {
+        anchoBase() { this.$nextTick(this.ajustarTexto); },
+        titulo() { this.$nextTick(this.ajustarTexto); },
+        descripcion() { this.$nextTick(this.ajustarTexto); },
+        botonTexto() { this.$nextTick(this.ajustarTexto); }
+    },
+
+    beforeUnmount() {
+        if (this._observer) this._observer.disconnect();
+        window.removeEventListener('resize', this.ajustarTexto);
+    },
+
     template: `
-    <section
-      class="event-banner"
-      :style="imageSrc
-        ? { backgroundImage: 'url(' + JSON.stringify(imageSrc) + ')' }
-        : { backgroundColor: '#094974' }"
-    >
+    <section ref="banner" class="event-banner" :style="bannerStyle">
       <div v-if="imageSrc" class="event-banner__overlay"></div>
 
-      <div class="event-banner__content">
+      <div ref="contenido" class="event-banner__content">
         <h1 class="event-banner__title">
           {{ titulo }}
         </h1>
