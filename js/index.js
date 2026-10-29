@@ -18,7 +18,8 @@ import FormCV from './enviarCv.js';
 import ServiciosGrid from './servicios.js';
 import ExperienciaSeccion from './textoEventos.js'
 import CtaEvento from './ContactanosEventos.js'
-
+import TimelineHistoria from './lineaDeTiempo.js';
+import AboutSection from './sobreNosotros.js';
 
 
 
@@ -101,6 +102,19 @@ const Nosotros = {
           botonTexto="Conocé nuestra historia"
           titulo="Comprometidos con un entorno más limpio y seguro"
           style="border-radius: 1.2rem;" />
+              <AboutSection
+              image-src="img/taza.png"
+              image-alt="Edificio de Iron Clean"
+              subtitulo="QUIÉNES SOMOS"
+              titulo="Más que limpieza, generamos confianza"
+              descripcion="Somos una empresa especializada en servicios de limpieza industrial, con años de experiencia en el mercado, brindando soluciones eficientes, seguras y sostenibles para sectores como el industrial, comercial y de infraestructura"
+              :caracteristicas="caracteristicas"
+            />
+          <TimelineHistoria
+              :hitos="historia"
+              titulo="Un camino de crecimiento constante"
+              subtitulo="NUESTRA HISTORIA"
+         />
         </div>`,
 };
 
@@ -555,10 +569,22 @@ const app = createApp({
           ],
         },
       ],
+      historia: [
+            { anio: 2010, descripcion: 'Inicio de operaciones' },
+            { anio: 2014, descripcion: 'Expansión de servicios' },
+            { anio: 2018, descripcion: 'Nuevos mercados y alianzas' },
+            { anio: 2021, descripcion: 'Certificaciones de calidad' },
+            { anio: 2024, descripcion: 'Seguimos creciendo' },
+      ],
+        caracteristicas: [
+            { titulo: 'Compromiso ambiental', icono: 'leaf' },
+            { titulo: 'Equipo especializado', icono: 'team' },
+            { titulo: 'Seguridad en cada proyecto', icono: 'shield' },
+        ]
     };
   },
 });
-
+// TODO : historia y caracteristicas, no van seguro aca, revisar si las otras tambien se pueden sacar a otro lado
 app.use(router);
 
 app.component('Navbar',              Navbar);
@@ -578,5 +604,7 @@ app.component('EventTypes', EventTypes);
 app.component('EventBanner', EventBanner);
 app.component('experiencia-seccion', ExperienciaSeccion)
 app.component('cta-evento', CtaEvento)
+app.component('TimelineHistoria', TimelineHistoria)
+app.component('AboutSection', AboutSection)
 
 app.mount('#app');
