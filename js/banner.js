@@ -1,199 +1,230 @@
-const bannerStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400&display=swap');
-
-  .ic-banner {
+const eventBannerStyles = `
+  .event-banner {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2.5rem;
-    padding: 4rem 4.5rem;
-    background: #0d1b2a;
-    border-radius: 24px;
+    width: 100%;
+    height: 28em;
+    box-sizing: border-box;
     overflow: hidden;
-    min-height: 380px;
-    font-family: 'Lato', sans-serif;
-    margin: 1rem;
-    padding-left: 8em!important;
-    padding-right: 8em!important;
-  }
-  .ic-banner__bg-shape {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  .ic-banner__bg-shape--1 {
-    width: 500px;
-    height: 500px;
-    top: -200px;
-    left: -100px;
-    background: radial-gradient(circle, rgba(24, 95, 165, 0.18) 0%, transparent 70%);
-  }
-  .ic-banner__bg-shape--2 {
-    width: 400px;
-    height: 400px;
-    bottom: -180px;
-    right: 260px;
-    background: radial-gradient(circle, rgba(240, 192, 64, 0.10) 0%, transparent 70%);
-  }
-  .ic-banner__left {
-    flex: 1;
-    z-index: 1;
-    max-width: 560px;
-  }
-  .ic-banner__eyebrow {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    font-size: 0.75rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: #f0c040;
-    margin: 0 0 1rem 0;
-  }
-  .ic-banner__title {
-    font-family: 'Playfair Display', serif;
-    margin: 0 0 0.25rem 0;
-    line-height: 1;
-  }
-  .ic-banner__title-brand {
-    display: block;
-    font-size: 2.8rem;
-    font-weight: 900;
+    background-color: #094974;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
-    letter-spacing: 0.04em;
   }
-  .ic-banner__title-sa {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #f0c040;
-    letter-spacing: 0.18em;
-    margin-top: 0.1rem;
-  }
-  .ic-banner__divider {
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #f0c040, #185fa5);
-    border-radius: 2px;
-    margin: 1.25rem 0;
-  }
-  .ic-banner__body {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    font-size: 1.5rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.70);
-    margin: 0 0 1.5rem 0;
-    letter-spacing: 0.08em;
-  }
-  .ic-banner__tags {
-    display: flex;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-  }
-  .ic-banner__tag {
-    font-size: 0.78rem;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    color: rgba(255, 255, 255, 0.75);
-    background: rgba(255, 255, 255, 0.07);
-    border: 0.5px solid rgba(255, 255, 255, 0.15);
-    border-radius: 100px;
-    padding: 0.3rem 0.85rem;
-  }
-  .ic-banner__right {
-    flex-shrink: 0;
-    z-index: 1;
-  }
-  .ic-banner__img-wrapper {
-    position: relative;
-    width: 420px;
-    height: 420px;
-    border-radius: 20px;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow:
-      0 0 0 1px rgba(255,255,255,0.08),
-      0 8px 24px rgba(0, 0, 0, 0.45),
-      0 24px 60px rgba(0, 0, 0, 0.35),
-      0 0 80px rgba(24, 95, 165, 0.25);
-  }
-  .ic-banner__img {
-    width: 85%;
-    height: 85%;
-    object-fit: contain;
-    border-radius: 12px;
-  }
-  .ic-banner__img-glow {
+
+  .event-banner__overlay {
     position: absolute;
     inset: 0;
-    border-radius: 20px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+    background: linear-gradient(
+      90deg,
+      rgba(4, 37, 59, 0.92) 0%,
+      rgba(4, 37, 59, 0.78) calc(var(--eb-content-w, 620px) * 0.68),
+      rgba(4, 37, 59, 0.15) calc(var(--eb-content-w, 620px) * 1.45),
+      transparent calc(var(--eb-content-w, 620px) * 1.9)
+    );
     pointer-events: none;
   }
-  @media (max-width: 768px) {
-    .ic-banner {
-      flex-direction: column-reverse;
-      padding: 2.5rem 2rem;
-      text-align: center;
+
+  .event-banner__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: var(--eb-content-w, 620px);
+    padding: 40px 5%;
+    box-sizing: border-box;
+  }
+
+  .event-banner__title {
+    margin: 0 0 20px;
+    font-size: clamp(26px, 3.2vw, 46px);
+    line-height: 1.08;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    overflow-wrap: break-word;
+  }
+
+  .event-banner__description {
+    margin: 0 0 28px;
+    font-size: clamp(15px, 1.5vw, 21px);
+    line-height: 1.45;
+    font-weight: 400;
+    overflow-wrap: break-word;
+  }
+
+  .event-banner__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #164b70;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .event-banner__button:hover {
+    transform: translateY(-2px);
+    background: #f0f5f8;
+  }
+
+  .event-banner__arrow {
+    font-size: 23px;
+    line-height: 1;
+  }
+
+  @media (min-width: 1000px) {
+    .event-banner__content {
+      padding-left: 5.2%;
     }
-    .ic-banner__title-brand { font-size: 2.6rem; }
-    .ic-banner__divider { margin: 1rem auto; }
-    .ic-banner__tags { justify-content: center; }
-    .ic-banner__img-wrapper { width: 300px; height: 300px; }
-    .ic-banner__bg-shape--2 { right: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .event-banner {
+      background-position: 60% center;
+    }
+
+    .event-banner__overlay {
+      background: rgba(4, 37, 59, 0.78);
+    }
+
+    .event-banner__content {
+      max-width: 100%;
+      padding: 24px;
+    }
+
+    .event-banner__title {
+      margin-bottom: 12px;
+    }
+
+    .event-banner__description {
+      margin-bottom: 18px;
+    }
   }
 `;
 
-function injectBannerStyles() {
-  if (document.getElementById('ic-banner-styles')) return;
-  const tag = document.createElement('style');
-  tag.id = 'ic-banner-styles';
-  tag.textContent = bannerStyles;
-  document.head.appendChild(tag);
-}
+(function() {
+    if (document.getElementById('ic-event-banner-styles')) return;
+
+    const tag = document.createElement('style');
+    tag.id = 'ic-event-banner-styles';
+    tag.textContent = eventBannerStyles;
+    document.head.appendChild(tag);
+})();
 
 export default {
-  name: "Banner",
-  props: {
-    imageSrc: {
-      type: String,
-      default: "./img/logo.png",
+    name: 'EventBanner',
+
+    props: {
+        imageSrc: {
+            type: String,
+            default: ''
+        },
+        // Ancho inicial (px) del bloque de texto
+        anchoBase: {
+            type: Number,
+            default: 620
+        },
+        titulo: {
+            type: String,
+            default: 'Eventos, ferias y exposiciones'
+        },
+        descripcion: {
+            type: String,
+            default: 'Soluciones integrales de limpieza para eventos corporativos, culturales y producciones especiales.'
+        },
+        botonTexto: {
+            type: String,
+            default: 'Solicitar presupuesto'
+        },
+        botonLink: {
+            type: String,
+            default: 'https://wa.me/5491160371192?text=' +
+                encodeURIComponent('¡Hola! Me gustaria obtener un presupuesto')
+        }
     },
-  },
-  mounted() {
-    injectBannerStyles();
-  },
-  template: `
-    <section class="ic-banner">
 
-      <div class="ic-banner__bg-shape ic-banner__bg-shape--1"></div>
-      <div class="ic-banner__bg-shape ic-banner__bg-shape--2"></div>
+    computed: {
+        bannerStyle() {
+            const style = {};
+            if (this.imageSrc) {
+                style.backgroundImage = 'url(' + JSON.stringify(this.imageSrc) + ')';
+            }
+            return style;
+        }
+    },
 
-      <div class="ic-banner__left">
-        <h1 class="ic-banner__title">
-          <span class="ic-banner__title-brand">Servicio profesional de limpieza</span>
+    methods: {
+        // Ensancha el bloque de texto hasta que entre en el alto del banner.
+        // El alto del banner nunca cambia, así que no hay bucle.
+        ajustarTexto() {
+            const el = this.$refs.banner;
+            const contenido = this.$refs.contenido;
+            if (!el || !contenido) return;
+
+            const anchoBanner = el.clientWidth;
+            let w = Math.min(this.anchoBase, anchoBanner);
+            el.style.setProperty('--eb-content-w', w + 'px');
+
+            while (contenido.offsetHeight > el.clientHeight && w < anchoBanner) {
+                w = Math.min(anchoBanner, w + 40);
+                el.style.setProperty('--eb-content-w', w + 'px');
+            }
+        }
+    },
+
+    mounted() {
+        this.ajustarTexto();
+        if (typeof ResizeObserver !== 'undefined') {
+            this._observer = new ResizeObserver(this.ajustarTexto);
+            this._observer.observe(this.$refs.banner);
+        } else {
+            window.addEventListener('resize', this.ajustarTexto);
+        }
+    },
+
+    watch: {
+        anchoBase() { this.$nextTick(this.ajustarTexto); },
+        titulo() { this.$nextTick(this.ajustarTexto); },
+        descripcion() { this.$nextTick(this.ajustarTexto); },
+        botonTexto() { this.$nextTick(this.ajustarTexto); }
+    },
+
+    beforeUnmount() {
+        if (this._observer) this._observer.disconnect();
+        window.removeEventListener('resize', this.ajustarTexto);
+    },
+
+    template: `
+    <section ref="banner" class="event-banner" :style="bannerStyle">
+      <div v-if="imageSrc" class="event-banner__overlay"></div>
+
+      <div ref="contenido" class="event-banner__content">
+        <h1 class="event-banner__title">
+          {{ titulo }}
         </h1>
-        <div class="ic-banner__divider"></div>
-        <p class="ic-banner__body">
-            Pone a su disposicion a profesionales altamente capacitados y confiables
-            para el aseo y la limpieza de <strong style="font-weight: 900;color: white;">oficinas, consorcios, empresas,
-            estudios de television, eventos</strong>.
-            Nuestro objetivo es brindar un entorno de trabajo limpio, seguro y saludable
-            para ayudar a fomentar la comodidad y productividad.
 
+        <p class="event-banner__description">
+          {{ descripcion }}
         </p>
-      </div>
 
-      <div class="ic-banner__right">
-        <div class="ic-banner__img-wrapper">
-          <img :src="imageSrc" alt="Iron Clean logo" class="ic-banner__img" />
-          <div class="ic-banner__img-glow"></div>
-        </div>
+        <a
+          class="event-banner__button"
+          :href="botonLink"
+        >
+          {{ botonTexto }}
+          <span class="event-banner__arrow" aria-hidden="true">→</span>
+        </a>
       </div>
-
     </section>
-  `,
+  `
 };

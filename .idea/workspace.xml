@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9384e3b3-4d80-43ab-a8fa-5a601b8af634" name="Changes" comment="WIP">
-      <change afterPath="$PROJECT_DIR$/js/lineaDeTiempo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/sobreNosotros.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/bannerHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/sobreNosotros/estructuraOrganizacion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/sobreNosotros/sobreNosotros.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ContactanosEventos.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ContactanosEventos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/banner.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/banner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bannerEventos.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/eventosDestacados.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/eventosDestacados.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lineaDeTiempo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sobreNosotros/lineaDeTiempo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +66,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Franco/IdeaProjects/iron-clean/img/imagenes-banners",
+    "last_opened_file_path": "C:/Users/Franco/IdeaProjects/iron-clean/js/sobreNosotros",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,11 +86,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\js\sobreNosotros" />
+      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\js\eventos" />
       <recent name="C:\Users\Franco\IdeaProjects\iron-clean\img\imagenes-banners" />
       <recent name="C:\Users\Franco\IdeaProjects\iron-clean\img\clientes" />
       <recent name="C:\Users\Franco\IdeaProjects\iron-clean\img\imagenes-eventos" />
-      <recent name="C:\Users\Franco\IdeaProjects\iron-clean\img\prueba" />
-      <recent name="C:\Users\Franco\IdeaProjects\iron-clean" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Franco\IdeaProjects\iron-clean\img\imagenes-banners" />
@@ -131,7 +138,8 @@
       <workItem from="1793066203718" duration="3755000" />
       <workItem from="1793141373825" duration="635000" />
       <workItem from="1793154391456" duration="3745000" />
-      <workItem from="1793227135080" duration="5535000" />
+      <workItem from="1793227135080" duration="5607000" />
+      <workItem from="1793323750390" duration="2511000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -429,7 +437,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793241268226</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1793242260959</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1793242260959</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +485,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/index.js</url>
-          <line>295</line>
+          <line>306</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -483,19 +499,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/index.js</url>
-          <line>202</line>
+          <line>213</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/index.js</url>
-          <line>120</line>
-          <properties lambdaOrdinal="-1" />
+          <line>122</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/index.js</url>
-          <line>142</line>
-          <properties lambdaOrdinal="-1" />
+          <line>153</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>

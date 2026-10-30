@@ -93,6 +93,11 @@
       border-radius: 50%;
       background: #ffffff;
     }
+    .cta-evento .cta-evento-icono-svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .cta-evento .cta-evento-icono svg {
       width: 1.7rem;
       height: 1.7rem;
@@ -102,11 +107,17 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
+    .cta-evento .cta-evento-icono img {
+      width: 1.7rem;
+      height: 1.7rem;
+      object-fit: contain;
+    }
     .cta-evento .cta-evento-beneficio-texto {
       margin: 0;
       font-size: .9rem;
       line-height: 1.3;
       color: #ffffff;
+      white-space: pre-line;
     }
     @media (max-width: 767.98px) {
       .cta-evento .cta-evento-titulo { font-size: 1.5rem; }
@@ -115,6 +126,28 @@
   `;
     document.head.appendChild(style);
 })();
+
+// Iconos por defecto (SVG completos). Mismos dibujos de siempre.
+const ICONO_CHECK =
+    '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+    '<polyline points="5 12.5 10 17.5 19 7.5"></polyline>' +
+    '</svg>';
+
+const ICONO_EQUIPO =
+    '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+    '<circle cx="12" cy="8" r="2.5"></circle>' +
+    '<path d="M7.5 16c0-2.2 2-3.6 4.5-3.6s4.5 1.4 4.5 3.6"></path>' +
+    '<circle cx="5.5" cy="10" r="1.8"></circle>' +
+    '<path d="M2.5 16c0-1.6 1.2-2.6 3-2.6"></path>' +
+    '<circle cx="18.5" cy="10" r="1.8"></circle>' +
+    '<path d="M21.5 16c0-1.6-1.2-2.6-3-2.6"></path>' +
+    '</svg>';
+
+const ICONO_RELOJ =
+    '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+    '<circle cx="12" cy="12" r="8"></circle>' +
+    '<polyline points="12 7.5 12 12 15 14"></polyline>' +
+    '</svg>';
 
 export default {
     name: 'CtaEvento',
@@ -142,6 +175,24 @@ export default {
         telefono: {
             type: String,
             default: '5491160371192'
+        },
+        // Color de fondo del componente (cualquier color CSS)
+        fondo: {
+            type: String,
+            default: '#0D1B2A'
+        },
+        // Lista de beneficios: [{ icono, texto }]
+        //  - icono: markup SVG completo (empieza con "<svg") o la ruta/URL de una imagen
+        //  - texto: usá \n para un salto de línea
+        beneficios: {
+            type: Array,
+            default: function () {
+                return [
+                    { icono: ICONO_CHECK,  texto: 'Personal\ncapacitado' },
+                    { icono: ICONO_EQUIPO, texto: 'Supervisión\npermanente' },
+                    { icono: ICONO_RELOJ,  texto: 'Respuesta\ninmediata' }
+                ];
+            }
         }
     },
     computed: {
@@ -162,6 +213,9 @@ export default {
         }
     },
     methods: {
+        esSvg(icono) {
+            return typeof icono === 'string' && icono.trim().charAt(0) === '<';
+        },
         // En celulares abre la app de correo (mailto). En computadoras abre
         // el redactor de Gmail en una pestaña nueva, porque mailto no hace nada
         // cuando no hay un programa de correo configurado.
@@ -176,7 +230,7 @@ export default {
         }
     },
     template: `
-    <section class="cta-evento">
+    <section class="cta-evento" :style="{ background: fondo }">
       <div class="cta-evento-contenido">
         <div class="row align-items-center g-4">
           <div class="col-md-6">
@@ -203,35 +257,20 @@ export default {
           </div>
           <div class="col-md-6">
             <div class="cta-evento-beneficios">
-              <div class="cta-evento-beneficio">
+              <div
+                v-for="(beneficio, i) in beneficios"
+                :key="i"
+                class="cta-evento-beneficio"
+              >
                 <div class="cta-evento-icono">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <polyline points="5 12.5 10 17.5 19 7.5"></polyline>
-                  </svg>
+                  <span
+                    v-if="esSvg(beneficio.icono)"
+                    class="cta-evento-icono-svg"
+                    v-html="beneficio.icono"
+                  ></span>
+                  <img v-else :src="beneficio.icono" alt="" />
                 </div>
-                <p class="cta-evento-beneficio-texto">Personal<br>capacitado</p>
-              </div>
-              <div class="cta-evento-beneficio">
-                <div class="cta-evento-icono">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="8" r="2.5"></circle>
-                    <path d="M7.5 16c0-2.2 2-3.6 4.5-3.6s4.5 1.4 4.5 3.6"></path>
-                    <circle cx="5.5" cy="10" r="1.8"></circle>
-                    <path d="M2.5 16c0-1.6 1.2-2.6 3-2.6"></path>
-                    <circle cx="18.5" cy="10" r="1.8"></circle>
-                    <path d="M21.5 16c0-1.6-1.2-2.6-3-2.6"></path>
-                  </svg>
-                </div>
-                <p class="cta-evento-beneficio-texto">Supervisión<br>permanente</p>
-              </div>
-              <div class="cta-evento-beneficio">
-                <div class="cta-evento-icono">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="8"></circle>
-                    <polyline points="12 7.5 12 12 15 14"></polyline>
-                  </svg>
-                </div>
-                <p class="cta-evento-beneficio-texto">Respuesta<br>inmediata</p>
+                <p class="cta-evento-beneficio-texto">{{ beneficio.texto }}</p>
               </div>
             </div>
           </div>

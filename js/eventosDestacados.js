@@ -394,15 +394,3 @@ export default {
     </section>
   `
 };
-
-/* ------------------------------------------------------------------
-   USO (en modo CDN, kebab-case y etiqueta de cierre explícita):
-
-   import EventosDestacados from './EventosDestacados.js';
-   // registrar:  components: { EventosDestacados }
-
-   <eventos-destacados
-     titulo="Eventos destacados"
-     :eventos="eventos"
-   ></eventos-destacados>
-------------------------------------------------------------------- */

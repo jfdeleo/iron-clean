@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 
 import Navbar               from './navbar.js';
 import ContactForm          from './ContactForm.js';
-import Banner               from './banner.js';
+import Banner               from './bannerHome.js';
 import Card                 from './cards.js';
 import Footer               from './footer.js';
 import ContactFormConTexto  from './ContactFormConTexto.js';
@@ -13,13 +13,14 @@ import FichaContacto from './contactanos.js';
 import GrillaClientes from './nuestrosClientes.js';
 import EventosDestacados from './eventosDestacados.js';
 import EventTypes from './tiposDeEventos.js';
-import EventBanner from './bannerEventos.js';
+import EventBanner from './banner.js';
 import FormCV from './enviarCv.js';
 import ServiciosGrid from './servicios.js';
 import ExperienciaSeccion from './textoEventos.js'
 import CtaEvento from './ContactanosEventos.js'
-import TimelineHistoria from './lineaDeTiempo.js';
-import AboutSection from './sobreNosotros.js';
+import TimelineHistoria from './sobreNosotros/lineaDeTiempo.js';
+import AboutSection from './sobreNosotros/sobreNosotros.js';
+import EstructuraOrganizacion from './sobreNosotros/estructuraOrganizacion.js';
 
 
 
@@ -96,7 +97,7 @@ const Home = {
 
 const Nosotros = {
   template: `<div class="container py-5" style="padding-top: 1% !important;padding-bottom: 0 !important;">
-          <EventBanner  image-src="img/imagenes-banners/banner-en-construccion.svg" 
+          <EventBanner image-src="img/imagenes-banners/banner-en-construccion.svg" 
           titulo="Comprometidos con un entorno más limpio y seguro"
           descripcion="En Iron Clean SA  trabajamos para ofrecer soluciones de limpieza industrial que aportan valor, seguridad y sostenibilidad a nuestro clientes"
           botonTexto="Conocé nuestra historia"
@@ -115,20 +116,30 @@ const Nosotros = {
               titulo="Un camino de crecimiento constante"
               subtitulo="NUESTRA HISTORIA"
          />
+         
         </div>`,
 };
 
 const NuestroEquipo = {
   template: `
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <h1 style="text-align: center;">Nuestro Equipo</h1>
-          <div style="width: 12em !important;margin-left:auto;margin-right:auto;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-          <p class="lead"><strong> (Rediseñar -> Revisar si no es redundante con el inicio)</strong>️</p>
-          <img src="./img/limpieza-empresas.png" alt="Iron Clean logo" class="ic-banner__img" style="width:50rem;margin-top:35px;"/>
-        </div>
-      </div>
+    <div class="container py-5"  style="padding-top: 1% !important;padding-bottom: 0 !important;">
+    <EventBanner
+       titulo="Más que un equipo, una operacion coordinada"
+          descripcion="Profesionales comprometidos que garantizan entornos más limpios, seguros y productivos para tu organización"
+          botonTexto="Solicitar presupuesto"   
+     image-src="img/imagenes-banners/banner-en-construccion.svg" style="border-radius: 1.2rem;" />
+      <estructura-organizacion
+              :pasos="[
+                { imagen: './img/user.png',    titulo: 'Gerencia General',  descripcion: 'Dirección y estrategia' },
+                { imagen: './img/user.png', titulo: 'Operaciones',       descripcion: 'Planificación y control' },
+                { imagen: './img/user.png', titulo: 'Supervisores',     descripcion: 'Coordinación en campo' },
+                { imagen: './img/user.png',    titulo: 'Equipos Técnicos',  descripcion: 'Ejecución en sitio' }
+              ]"
+            ></estructura-organizacion>
+        <cta-evento titulo="Nuestro propósito"
+         texto="Contribuir a un mundo más limpio, seguro y saludable, a través de servicios de limpieza industrial de alta calidad, con un fuerte compromiso con el medio ambiente y las personas."
+          fondo="#173023"
+         style="border-radius: 1em;"></cta-evento>
         <form-c-v
          style="margin-top: 2em;"
           destinatario="franc15deleo@gmail.com"
@@ -606,5 +617,6 @@ app.component('experiencia-seccion', ExperienciaSeccion)
 app.component('cta-evento', CtaEvento)
 app.component('TimelineHistoria', TimelineHistoria)
 app.component('AboutSection', AboutSection)
+app.component('EstructuraOrganizacion', EstructuraOrganizacion);
 
 app.mount('#app');
