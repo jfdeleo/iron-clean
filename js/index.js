@@ -25,6 +25,8 @@ import barraEstadisticas from './nuestroEquipo/bajoEstadisticas.js';
 import nuestraGente from './nuestroEquipo/nuestraGente.js';
 import especialistasGrid from './nuestroEquipo/especialistasGrid.js';
 import nuestrosValores from './nuestroEquipo/nuestrosValores.js';
+import testimoniosClientes from './nuestroEquipo/testimoniosClientes.js';
+import certificacionesAlianzas from './nuestroEquipo/certificacionesAlianzas.js';
 
 
 
@@ -236,10 +238,52 @@ const NuestroEquipo = {
       imagen="img/taza.png"
       alt="Equipo de Iron Clean"
     ></nuestros-valores>
-        <cta-evento titulo="Nuestro propósito"
-         texto="Contribuir a un mundo más limpio, seguro y saludable, a través de servicios de limpieza industrial de alta calidad, con un fuerte compromiso con el medio ambiente y las personas."
-          fondo="#173023"
-         style="border-radius: 1em;"></cta-evento>
+    <div class="row g-4 px-5">
+      <div class="col-lg-6">
+        <testimonios-clientes
+            style="
+                padding-top: 2%;
+                padding-bottom: 2%;
+            "
+          :testimonios="[
+            {
+              imagen: 'img/taza.png',
+              opinion: 'La profesionalidad del equipo de Iron Clean ha sido clave para mantener nuestras instalaciones operativas y seguras.',
+              cargo: 'Gerente de Operaciones',
+              empresa: 'Empresa Industrial'
+            },
+            {
+              imagen: 'img/taza.png',
+              opinion: 'Otro testimonio...',
+              cargo: 'Directora de Compras',
+              empresa: 'Otra Empresa'
+            }
+          ]"
+        ></testimonios-clientes>
+      </div>
+      <div class="col-lg-6">
+        <certificaciones-alianzas
+            style="
+                padding-top: 2%;
+                padding-bottom: 2%;
+            "
+          :imagenes="[
+            'img/nuestroEquipo/iso-9001.png',
+            'img/nuestroEquipo/iso-14001.png',
+            'img/nuestroEquipo/iso-45001.png',
+            'img/nuestroEquipo/sustentabilidad.png',
+            'img/nuestroEquipo/capacitacion-continua.png'
+          ]"
+        ></certificaciones-alianzas>
+      </div>
+    </div>
+    
+    
+    <cta-evento titulo="¿Necesitas un partner estratégico para la gestion de tus instalaciones?"
+     texto="Nuestro equipo está listo para acompañar el crecimiento de tu organización con soluciones a medida"
+      fondo="#012849"
+      :beneficios="[]"
+     style="border-radius: 1em;"></cta-evento>
     </div>
   `,
 };
@@ -255,35 +299,36 @@ const NuestrosClientes = {
                 <grilla-clientes
                   :columnas="5"
                   :logos="[
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000165-59de259de4/PPlus_Logo_1200x630_BLUE.png?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000039-d32f6d32f9/kuarzo.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000578-eacb3eacb5/Captura%20de%20pantalla%202026-04-06%20132618.png?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000490-c9a96c9a98/ChatGPT%20Image%2028%20oct%202025%2C%2009_16_54.png?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000488-b6a39b6a3b/ChatGPT%20Image%2028%20oct%202025%2C%2009_06_21.png?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000038-b5228b522a/nettv.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000167-0591605919/Telefe.png?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000494-53c4453c46/294589374_417082223778804_8661031369506965919_n.png?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000149-bc5adbc5ae/gran-hermano-2022-el-reality___9FXtYKoum_2000x1500__1.jpeg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000037-d481ad481c/urbana%20play-1.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000394-5abbb5abbe/THE%20BALLS%21.jpeg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000355-25ce025ce3/the-floor-el-trecejpg.jpeg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000231-5638556387/CSYXHHA-_400x400%20%281%29.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000105-3c0303c032/EMBAJADA%20DE%20ESPA%C3%91A.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000070-1fbc81fbc9/onceloops.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000135-6ce926ce94/STORY%20LAB.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000143-3988e39890/%E2%9C%93%20Agencia%20O%E2%80%99GRADY..jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000233-f0032f0033/images.png?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000227-0f1400f143/10B1AAA6-3DAA-40E8-AF8E-06FE7E186754.jpeg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000321-777ca777cc/Captura%20de%20pantalla%202023-08-03%20110914.png?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000141-6f6c56f6c7/PROASEG.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000041-c3398c3399/el%20ombu.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000173-13ec713ec8/1534792960872.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000225-19d0d19d0e/1647014778762.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000219-dc7dbdc7dc/IMG-20230328-WA0024.jpg?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000235-d547cd547d/logo-mudra-cabecera_GRANDE-01.png?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000175-2b6362b638/Captura.PNG?ph=4304814ec2',
-                    'https://4304814ec2.clvaw-cdnwnd.com/ddd8d8f19b3b15a30ba7927fe5e1966a/200000323-92e9292e95/e5f63246-a545-4f64-9c59-8c8331f9cd6e.jpeg?ph=4304814ec2'
-                  ]"
+                      './img/clientes/img (1).jpeg',
+                      './img/clientes/img (2).jpeg',
+                      './img/clientes/img (3).jpeg',
+                      './img/clientes/img (4).jpeg',
+                      './img/clientes/img (5).jpeg',
+                      './img/clientes/img (6).jpeg',
+                      './img/clientes/img (7).jpeg',
+                      './img/clientes/img (8).jpeg',
+                      './img/clientes/img (9).jpeg',
+                      './img/clientes/img (10).jpeg',
+                      './img/clientes/img (11).jpeg',
+                      './img/clientes/img (12).jpeg',
+                      './img/clientes/img (13).jpeg',
+                      './img/clientes/img (14).jpeg',
+                      './img/clientes/img (15).jpeg',
+                      './img/clientes/img (16).jpeg',
+                      './img/clientes/img (17).jpeg',
+                      './img/clientes/img (18).jpeg',
+                      './img/clientes/img (19).jpeg',
+                      './img/clientes/img (20).jpeg',
+                      './img/clientes/img (21).jpeg',
+                      './img/clientes/img (22).jpeg',
+                      './img/clientes/img (23).jpeg',
+                      './img/clientes/img (24).jpeg',
+                      './img/clientes/img (25).jpeg',
+                      './img/clientes/img (26).jpeg',
+                      './img/clientes/img (27).jpeg',
+                      './img/clientes/img (28).jpeg',
+                      './img/clientes/img (29).jpeg',
+            ]"
                 ></grilla-clientes>
                 </div>
               </div>
@@ -727,5 +772,7 @@ app.component('barraEstadisticas', barraEstadisticas);
 app.component('nuestraGente', nuestraGente);
 app.component('especialistasGrid', especialistasGrid);
 app.component('nuestrosValores', nuestrosValores);
+app.component('testimoniosClientes', testimoniosClientes);
+app.component('certificacionesAlianzas', certificacionesAlianzas);
 
 app.mount('#app');
