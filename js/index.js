@@ -21,7 +21,10 @@ import CtaEvento from './ContactanosEventos.js'
 import TimelineHistoria from './sobreNosotros/lineaDeTiempo.js';
 import AboutSection from './sobreNosotros/sobreNosotros.js';
 import EstructuraOrganizacion from './sobreNosotros/estructuraOrganizacion.js';
-
+import barraEstadisticas from './nuestroEquipo/bajoEstadisticas.js';
+import nuestraGente from './nuestroEquipo/nuestraGente.js';
+import especialistasGrid from './nuestroEquipo/especialistasGrid.js';
+import nuestrosValores from './nuestroEquipo/nuestrosValores.js';
 
 
 
@@ -170,29 +173,73 @@ const Nosotros = {
 const NuestroEquipo = {
   template: `
     <div class="container py-5"  style="padding-top: 1% !important;padding-bottom: 0 !important;">
+    <div style="background: #0a2a4f;">
     <EventBanner
        titulo="Más que un equipo, una operacion coordinada"
           descripcion="Profesionales comprometidos que garantizan entornos más limpios, seguros y productivos para tu organización"
           botonTexto="Solicitar presupuesto"   
-     image-src="img/imagenes-banners/banner-en-construccion.svg" style="border-radius: 1.2rem;" />
+     image-src="img/imagenes-banners/banner-en-construccion.svg"/>
+    <barra-estadisticas
+      fondo="#01294b"
+      :estadisticas="[
+        {
+          icono: 'groups',
+          numero: '+15',
+          titulo: 'Años de experiencia',
+          detalle: 'Acompañando a empresas\\nde todo el país'
+        },
+        {
+          icono: 'apartment',
+          numero: '+500',
+          titulo: 'Servicios mensuales',
+          detalle: 'En oficinas, industrias\\ny grandes superficies'
+        },
+        {
+          icono: 'star_border',
+          numero: '98%',
+          titulo: 'Satisfacción del cliente',
+          detalle: 'Basada en nuestro\\ncompromiso y calidad'
+        },
+        {
+          icono: 'schedule',
+          numero: '24/7',
+          titulo: 'Cobertura operativa',
+          detalle: 'Siempre listos\\npara tu operación'
+        }
+      ]"
+    ></barra-estadisticas>
+    </div>
+    <nuestra-gente
+      imagen="img/taza.png"
+      alt="Operario de Iron Clean limpiando un hall"
+    ></nuestra-gente>
       <estructura-organizacion
-              :pasos="[
-                { imagen: './img/user.png',    titulo: 'Gerencia General',  descripcion: 'Dirección y estrategia' },
-                { imagen: './img/user.png', titulo: 'Operaciones',       descripcion: 'Planificación y control' },
-                { imagen: './img/user.png', titulo: 'Supervisores',     descripcion: 'Coordinación en campo' },
-                { imagen: './img/user.png',    titulo: 'Equipos Técnicos',  descripcion: 'Ejecución en sitio' }
-              ]"
-            ></estructura-organizacion>
+          :pasos="[
+            { imagen: './img/user.png',    titulo: 'Gerencia General',  descripcion: 'Dirección y estrategia' },
+            { imagen: './img/user.png', titulo: 'Operaciones',       descripcion: 'Planificación y control' },
+            { imagen: './img/user.png', titulo: 'Supervisores',     descripcion: 'Coordinación en campo' },
+            { imagen: './img/user.png',    titulo: 'Equipos Técnicos',  descripcion: 'Ejecución en sitio' }
+          ]"
+      ></estructura-organizacion>
+      <especialistas-grid
+      style="padding: 1% 2em 0px 2em;"
+          :items="[
+            { imagen: 'img/taza.png', icono: 'hub',               texto: 'Limpieza\\nCorporativa' },
+            { imagen: 'img/taza.png',  icono: 'factory',           texto: 'Limpieza\\nIndustrial' },
+            { imagen: 'img/taza.png',        icono: 'engineering',       texto: 'Mantenimiento\\nIntegral' },
+            { imagen: 'img/taza.png',            icono: 'groups',            texto: 'Logística\\nOperativa' },
+            { imagen: 'img/taza.png',          icono: 'supervisor_account', texto: 'Supervisión\\nTécnica' },
+            { imagen: 'img/taza.png',            icono: 'health_and_safety', texto: 'Seguridad\\ne Higiene' }
+          ]"
+      ></especialistas-grid>  
+    <nuestros-valores
+      imagen="img/taza.png"
+      alt="Equipo de Iron Clean"
+    ></nuestros-valores>
         <cta-evento titulo="Nuestro propósito"
          texto="Contribuir a un mundo más limpio, seguro y saludable, a través de servicios de limpieza industrial de alta calidad, con un fuerte compromiso con el medio ambiente y las personas."
           fondo="#173023"
          style="border-radius: 1em;"></cta-evento>
-        <form-c-v
-         style="margin-top: 2em;"
-          destinatario="franc15deleo@gmail.com"
-          :whatsapp="true"
-          wanumero="5491160371192"
-        ></form-c-v>
     </div>
   `,
 };
@@ -370,6 +417,17 @@ const Contacto = {
               <contact-form class="col-12 col-md-5" destinatario="franco15deleo@gmail.com"></contact-form>
             </div>
       </div>
+    
+        <div class="col-md-6 offset-md-3">
+                  <h1 style="text-align: center;">REVISAR DONDE QUEDA ESTO</h1>
+                  <div style="width: 7em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+              </div>
+      <form-c-v
+         style="margin-top: 2em;"
+          destinatario="franc15deleo@gmail.com"
+          :whatsapp="true"
+          wanumero="5491160371192"
+        ></form-c-v>
     </div>
   `,
 };
@@ -665,5 +723,9 @@ app.component('cta-evento', CtaEvento)
 app.component('TimelineHistoria', TimelineHistoria)
 app.component('AboutSection', AboutSection)
 app.component('EstructuraOrganizacion', EstructuraOrganizacion);
+app.component('barraEstadisticas', barraEstadisticas);
+app.component('nuestraGente', nuestraGente);
+app.component('especialistasGrid', especialistasGrid);
+app.component('nuestrosValores', nuestrosValores);
 
 app.mount('#app');

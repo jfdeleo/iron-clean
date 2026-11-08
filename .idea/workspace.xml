@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9384e3b3-4d80-43ab-a8fa-5a601b8af634" name="Changes" comment="WIP">
+      <change afterPath="$PROJECT_DIR$/js/nuestroEquipo/bajoEstadisticas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/nuestroEquipo/especialistasGrid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/nuestroEquipo/nuestraGente.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/nuestroEquipo/nuestrosValores.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ContactanosEventos.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ContactanosEventos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/carrousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/carrousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/sobreNosotros/lineaDeTiempo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sobreNosotros/lineaDeTiempo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +136,7 @@
       <workItem from="1793227135080" duration="5607000" />
       <workItem from="1793323750390" duration="2697000" />
       <workItem from="1794011307440" duration="1074000" />
-      <workItem from="1794157943855" duration="3262000" />
+      <workItem from="1794157943855" duration="7473000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -450,7 +450,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793326464348</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1794162813432</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1794162813432</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +498,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/index.js</url>
-          <line>353</line>
+          <line>400</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -504,22 +512,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/index.js</url>
-          <line>260</line>
+          <line>307</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/index.js</url>
-          <line>169</line>
+          <line>172</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/index.js</url>
-          <line>200</line>
+          <line>247</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/index.js</url>
-          <line>255</line>
+          <line>302</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
