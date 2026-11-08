@@ -104,7 +104,7 @@ const timelineHistoriaStyles = `
     max-width: 10rem;
     margin: 0 auto;
     color: #536171;
-    font-size: 0.8rem;
+    font-size: 1.35rem;
     font-weight: 400;
     line-height: 1.45;
     overflow-wrap: anywhere;

@@ -2,6 +2,16 @@
 // Los estilos se inyectan desde un IIFE porque <style> dentro del template no funciona en CDN.
 
 (function () {
+    // Fuente Material Icons de Google (clásica: filled, outlined, round y sharp).
+    // Si la página ya la carga en otro lado, no se vuelve a agregar.
+    if (!document.getElementById('cta-evento-material-icons')) {
+        const link = document.createElement('link');
+        link.id = 'cta-evento-material-icons';
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp';
+        document.head.appendChild(link);
+    }
+
     if (document.getElementById('cta-evento-styles')) return;
 
     const style = document.createElement('style');
@@ -112,6 +122,12 @@
       height: 1.7rem;
       object-fit: contain;
     }
+    .cta-evento .cta-evento-icono .cta-evento-icono-material {
+      font-size: 1.7rem;
+      line-height: 1;
+      color: #074C73;
+      user-select: none;
+    }
     .cta-evento .cta-evento-beneficio-texto {
       margin: 0;
       font-size: .9rem;
@@ -149,6 +165,14 @@ const ICONO_RELOJ =
     '<polyline points="12 7.5 12 12 15 14"></polyline>' +
     '</svg>';
 
+// Clase de la fuente según el estilo pedido en el beneficio.
+const CLASES_MATERIAL = {
+    filled: 'material-icons',
+    outlined: 'material-icons-outlined',
+    round: 'material-icons-round',
+    sharp: 'material-icons-sharp'
+};
+
 export default {
     name: 'CtaEvento',
     props: {
@@ -181,9 +205,15 @@ export default {
             type: String,
             default: '#0D1B2A'
         },
-        // Lista de beneficios: [{ icono, texto }]
-        //  - icono: markup SVG completo (empieza con "<svg") o la ruta/URL de una imagen
+        // Lista de beneficios: [{ icono, texto, estilo? }]
+        //  - icono: una de estas tres opciones
+        //      1) nombre de un Material Icon de Google, ej: 'verified', 'groups', 'schedule'
+        //         (lista completa en https://fonts.google.com/icons)
+        //      2) markup SVG completo (empieza con "<svg")
+        //      3) ruta/URL de una imagen, ej: 'img/icono.png'
         //  - texto: usá \n para un salto de línea
+        //  - estilo (opcional, solo para Material Icons): 'filled' (por defecto),
+        //    'outlined', 'round' o 'sharp'
         beneficios: {
             type: Array,
             default: function () {
@@ -215,6 +245,15 @@ export default {
     methods: {
         esSvg(icono) {
             return typeof icono === 'string' && icono.trim().charAt(0) === '<';
+        },
+        // Una imagen tiene "/" o "." (ruta, extensión o data:). Los nombres de
+        // Material Icons solo llevan letras, números y guiones bajos.
+        esImagen(icono) {
+            return typeof icono === 'string' && /[\/.:]/.test(icono);
+        },
+        claseMaterial(beneficio) {
+            const base = CLASES_MATERIAL[beneficio.estilo] || CLASES_MATERIAL.filled;
+            return base + ' cta-evento-icono-material';
         },
         // En celulares abre la app de correo (mailto). En computadoras abre
         // el redactor de Gmail en una pestaña nueva, porque mailto no hace nada
@@ -268,7 +307,12 @@ export default {
                     class="cta-evento-icono-svg"
                     v-html="beneficio.icono"
                   ></span>
-                  <img v-else :src="beneficio.icono" alt="" />
+                  <img v-else-if="esImagen(beneficio.icono)" :src="beneficio.icono" alt="" />
+                  <span
+                    v-else
+                    :class="claseMaterial(beneficio)"
+                    aria-hidden="true"
+                  >{{ beneficio.icono }}</span>
                 </div>
                 <p class="cta-evento-beneficio-texto">{{ beneficio.texto }}</p>
               </div>

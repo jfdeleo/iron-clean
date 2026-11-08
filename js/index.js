@@ -116,8 +116,55 @@ const Nosotros = {
               titulo="Un camino de crecimiento constante"
               subtitulo="NUESTRA HISTORIA"
          />
+        <cta-evento
+         fondo="#142C26"
+         titulo="Nuesto propósito"
+         texto="Contribuir a un mundo mas limpio, seguro y saludable, a través de servicios de limpieza industrial de alta calidad, con un fuerte compromiso con el medio ambiente y las personas"
+         style="border-radius: 1em;"
+          :beneficios="[
+            { icono: 'nest_eco_leaf',   texto: 'Cuidamos el entorno' },
+            { icono: 'groups',   texto: 'Valoramos a las personas', estilo: 'outlined' },
+            { icono: 'signal_cellular_alt', texto: 'Generamos un impacto positivo' , estilo: 'round' }
+          ]"
          
-        </div>`,
+         ></cta-evento>
+                  <carrousel
+            :fotos="[
+              './img/clientes/img (1).jpeg',
+              './img/clientes/img (2).jpeg',
+              './img/clientes/img (3).jpeg',
+              './img/clientes/img (4).jpeg',
+              './img/clientes/img (5).jpeg',
+              './img/clientes/img (6).jpeg',
+              './img/clientes/img (7).jpeg',
+              './img/clientes/img (8).jpeg',
+              './img/clientes/img (9).jpeg',
+              './img/clientes/img (10).jpeg',
+              './img/clientes/img (11).jpeg',
+              './img/clientes/img (12).jpeg',
+              './img/clientes/img (13).jpeg',
+              './img/clientes/img (14).jpeg',
+              './img/clientes/img (15).jpeg',
+              './img/clientes/img (16).jpeg',
+              './img/clientes/img (17).jpeg',
+              './img/clientes/img (18).jpeg',
+              './img/clientes/img (19).jpeg',
+              './img/clientes/img (20).jpeg',
+              './img/clientes/img (21).jpeg',
+              './img/clientes/img (22).jpeg',
+              './img/clientes/img (23).jpeg',
+              './img/clientes/img (24).jpeg',
+              './img/clientes/img (25).jpeg',
+              './img/clientes/img (26).jpeg',
+              './img/clientes/img (27).jpeg',
+              './img/clientes/img (28).jpeg',
+              './img/clientes/img (29).jpeg',
+    ]"
+            :visibles="6"
+            :velocidad="60"            
+          ></carrousel>
+        </div>
+`,
 };
 
 const NuestroEquipo = {

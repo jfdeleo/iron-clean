@@ -3,7 +3,6 @@ const carouselStyles = `
     overflow: hidden;
     position: relative;
     width: 100%;
-    height: 420px;
   }
   .ic-carousel__track {
     display: flex;
@@ -104,6 +103,7 @@ export default {
   },
   template: `
     <div class="ic-carousel" ref="carousel">
+    <h2 class="timeline-historia__title" style="text-align:center;padding-top: 2%;padding-bottom: 2%" >Confian en nosotros</h2>
       <div class="ic-carousel__track" ref="track">
         <div
           v-for="(foto, i) in slides"
