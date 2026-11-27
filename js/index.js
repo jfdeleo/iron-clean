@@ -340,6 +340,7 @@ const Eventos = {
   template: `
     <div class="container py-5" style="padding-top: 1% !important;padding-bottom: 0 !important;">
     <EventBanner
+    ajuste-imagen="contain" posicion-imagen="right center"
      mensaje-whatsapp="Hola ¿Cómo estas? Estoy organizando un evento y quiero cotizar un presupuesto por sus servicios."
      image-src="img/imagenes-banners/banner-eventos.svg" style="border-radius: 1.2rem;" />
        <experiencia-seccion

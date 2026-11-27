@@ -121,6 +121,9 @@ const eventBannerStyles = `
     document.head.appendChild(tag);
 })();
 
+// Mismo corte que el @media (max-width: 640px) del CSS
+const MEDIA_MOVIL = '(max-width: 640px)';
+
 export default {
     name: 'EventBanner',
 
@@ -128,6 +131,32 @@ export default {
         imageSrc: {
             type: String,
             default: ''
+        },
+        // Si es true, en celular no se muestra (ni se descarga) la imagen de fondo:
+        // queda solo el color de fondo del banner.
+        ocultarImagenMovil: {
+            type: Boolean,
+            default: true
+        },
+        // Cómo se ajusta la imagen de fondo:
+        //   'cover'   -> llena todo el banner (default)
+        //   'contain' -> se ve la imagen completa, sin recortar (pueden quedar bordes del color de fondo)
+        //   'fill'    -> estira la imagen al tamaño exacto del banner (puede deformarla)
+        // También acepta cualquier valor válido de background-size (ej: '80%', 'auto 100%')
+        ajusteImagen: {
+            type: String,
+            default: 'cover'
+        },
+        // Posición de la imagen (valor de background-position). Vacío = la del CSS
+        posicionImagen: {
+            type: String,
+            default: ''
+        },
+        // Alto máximo del banner cuando se adapta a la proporción de la imagen.
+        // Evita que en pantallas muy anchas ocupe más que la ventana. '' = sin límite.
+        altoMaximo: {
+            type: String,
+            default: '90vh'
         },
         // Ancho inicial (px) del bloque de texto
         anchoBase: {
@@ -158,11 +187,38 @@ export default {
         }
     },
 
+    data() {
+        return {
+            // Proporción (ancho / alto) de la imagen. 0 = sin imagen o todavía cargando.
+            ratio: 0,
+            // Se calcula desde el inicio para no mostrar la imagen un instante en celular.
+            esMovil: typeof window !== 'undefined' && !!window.matchMedia
+                ? window.matchMedia(MEDIA_MOVIL).matches
+                : false
+        };
+    },
+
     computed: {
+        usarImagen() {
+            return !!this.imageSrc && !(this.ocultarImagenMovil && this.esMovil);
+        },
+
+        ratioEfectivo() {
+            return this.usarImagen ? this.ratio : 0;
+        },
+
         bannerStyle() {
             const style = {};
-            if (this.imageSrc) {
+            if (this.usarImagen) {
                 style.backgroundImage = 'url(' + JSON.stringify(this.imageSrc) + ')';
+                style.backgroundSize = this.ajusteImagen === 'fill' ? '100% 100%' : this.ajusteImagen;
+                // Solo se pisa la posición si se pasa la prop, así no se pierde el ajuste mobile del CSS
+                if (this.posicionImagen) {
+                    style.backgroundPosition = this.posicionImagen;
+                }
+                if (this.ratio && this.altoMaximo) {
+                    style.maxHeight = this.altoMaximo;
+                }
             }
             return style;
         },
@@ -175,12 +231,43 @@ export default {
     },
 
     methods: {
-        // Ensancha el bloque de texto hasta que entre en el alto del banner.
-        // El alto del banner nunca cambia, así que no hay bucle.
+        // Lee las medidas reales de la imagen para que el banner tome su proporción.
+        cargarImagen() {
+            if (!this.usarImagen) {
+                this.ratio = 0;
+                return;
+            }
+            const src = this.imageSrc;
+            const img = new Image();
+            img.onload = () => {
+                if (src !== this.imageSrc) return;
+                this.ratio = (img.naturalWidth && img.naturalHeight)
+                    ? img.naturalWidth / img.naturalHeight
+                    : 0;
+            };
+            img.onerror = () => {
+                if (src === this.imageSrc) this.ratio = 0;
+            };
+            img.src = src;
+        },
+
+        actualizarMovil(e) {
+            this.esMovil = e.matches;
+        },
+
+        // 1) El alto del banner sigue la proporción de la imagen (o 28em si no hay imagen).
+        // 2) Se ensancha el bloque de texto hasta que entre en ese alto.
+        // 3) Si aun así no entra, el banner crece lo necesario (nunca se corta el texto).
+        // El resultado depende solo del ancho disponible, así que no hay bucle con el ResizeObserver.
         ajustarTexto() {
             const el = this.$refs.banner;
             const contenido = this.$refs.contenido;
             if (!el || !contenido) return;
+
+            el.style.minHeight = '';
+            el.style.height = this.ratioEfectivo
+                ? Math.round(el.clientWidth / this.ratioEfectivo) + 'px'
+                : '';
 
             const anchoBanner = el.clientWidth;
             let w = Math.min(this.anchoBase, anchoBanner);
@@ -190,10 +277,25 @@ export default {
                 w = Math.min(anchoBanner, w + 40);
                 el.style.setProperty('--eb-content-w', w + 'px');
             }
+
+            if (contenido.offsetHeight > el.clientHeight) {
+                el.style.minHeight = contenido.offsetHeight + 'px';
+            }
         }
     },
 
     mounted() {
+        if (typeof window !== 'undefined' && window.matchMedia) {
+            this._mq = window.matchMedia(MEDIA_MOVIL);
+            this.esMovil = this._mq.matches;
+            if (this._mq.addEventListener) {
+                this._mq.addEventListener('change', this.actualizarMovil);
+            } else if (this._mq.addListener) {
+                this._mq.addListener(this.actualizarMovil);
+            }
+        }
+
+        this.cargarImagen();
         this.ajustarTexto();
         if (typeof ResizeObserver !== 'undefined') {
             this._observer = new ResizeObserver(this.ajustarTexto);
@@ -204,6 +306,13 @@ export default {
     },
 
     watch: {
+        imageSrc() { this.cargarImagen(); },
+        usarImagen() {
+            this.cargarImagen();
+            this.$nextTick(this.ajustarTexto);
+        },
+        ratio() { this.$nextTick(this.ajustarTexto); },
+        altoMaximo() { this.$nextTick(this.ajustarTexto); },
         anchoBase() { this.$nextTick(this.ajustarTexto); },
         titulo() { this.$nextTick(this.ajustarTexto); },
         descripcion() { this.$nextTick(this.ajustarTexto); },
@@ -213,11 +322,18 @@ export default {
     beforeUnmount() {
         if (this._observer) this._observer.disconnect();
         window.removeEventListener('resize', this.ajustarTexto);
+        if (this._mq) {
+            if (this._mq.removeEventListener) {
+                this._mq.removeEventListener('change', this.actualizarMovil);
+            } else if (this._mq.removeListener) {
+                this._mq.removeListener(this.actualizarMovil);
+            }
+        }
     },
 
     template: `
     <section ref="banner" class="event-banner" :style="bannerStyle">
-      <div v-if="imageSrc" class="event-banner__overlay"></div>
+      <div v-if="usarImagen" class="event-banner__overlay"></div>
 
       <div ref="contenido" class="event-banner__content">
         <h1 class="event-banner__title">
