@@ -161,19 +161,13 @@ export default {
             type: String,
             default: 'Un camino de crecimiento constante',
         },
-        subtitulo: {
-            type: String,
-            default: 'NUESTRA HISTORIA',
-        },
+
     },
 
     template: `
     <section class="timeline-historia">
 
-      <header class="timeline-historia__header">
-        <p class="timeline-historia__eyebrow">{{ subtitulo }}</p>
-        <h2 class="timeline-historia__title">{{ titulo }}</h2>
-      </header>
+
 
       <div class="timeline-historia__scroll">
         <div

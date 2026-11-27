@@ -105,7 +105,7 @@ const Nosotros = {
           <EventBanner image-src="img/imagenes-banners/banner-en-construccion.svg" 
           titulo="Comprometidos con un entorno más limpio y seguro"
           descripcion="En Iron Clean SA  trabajamos para ofrecer soluciones de limpieza industrial que aportan valor, seguridad y sostenibilidad a nuestro clientes"
-          botonTexto="Conocé nuestra historia"
+          
           titulo="Comprometidos con un entorno más limpio y seguro"
           style="border-radius: 1.2rem;" />
               <AboutSection
@@ -344,9 +344,8 @@ const Eventos = {
      mensaje-whatsapp="Hola ¿Cómo estas? Estoy organizando un evento y quiero cotizar un presupuesto por sus servicios."
      image-src="img/imagenes-banners/banner-eventos.svg" style="border-radius: 1.2rem;" />
        <experiencia-seccion
-      etiqueta="Nuestra historia"
-      titulo="Más que limpieza, | acompañamos grandes | experiencias"
-      texto="Contamos con amplia experiencia en eventos culturales, corporativos, exposiciones, desfiles y producciones especiales, brindando servicios de limpieza con altos estándares de calidad y supervisión permanente.."
+      titulo="Más que  limpieza, acompañamos grandes experiencias"
+      texto="Contamos con amplia experiencia en eventos culturales, corporativos, exposiciones, desfiles y producciones especiales, brindando servicios de limpieza con altos estándares de calidad y supervisión permanente."
     ></experiencia-seccion> 
       <eventos-destacados
           style="margin-top: 2%;"
