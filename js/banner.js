@@ -146,10 +146,15 @@ export default {
             type: String,
             default: 'Solicitar presupuesto'
         },
+        // Mensaje que se envía por WhatsApp al hacer click en el botón
+        mensajeWhatsapp: {
+            type: String,
+            default: '¡Hola! Me gustaria obtener un presupuesto'
+        },
+        // Si se pasa, tiene prioridad y se usa tal cual (ignora mensajeWhatsapp)
         botonLink: {
             type: String,
-            default: 'https://wa.me/5491160371192?text=' +
-                encodeURIComponent('¡Hola! Me gustaria obtener un presupuesto')
+            default: ''
         }
     },
 
@@ -160,6 +165,12 @@ export default {
                 style.backgroundImage = 'url(' + JSON.stringify(this.imageSrc) + ')';
             }
             return style;
+        },
+
+        linkFinal() {
+            if (this.botonLink) return this.botonLink;
+            return 'https://wa.me/5491160371192?text=' +
+                encodeURIComponent(this.mensajeWhatsapp);
         }
     },
 
@@ -219,7 +230,7 @@ export default {
 
         <a
           class="event-banner__button"
-          :href="botonLink"
+          :href="linkFinal"
         >
           {{ botonTexto }}
           <span class="event-banner__arrow" aria-hidden="true">→</span>

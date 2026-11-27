@@ -180,7 +180,7 @@ export default {
         <p class="ic-banner__body">
             Pone a su disposicion a profesionales altamente capacitados y confiables
             para el aseo y la limpieza de <strong style="font-weight: 900;color: white;">oficinas, consorcios, empresas,
-            estudios de television, eventos</strong>.
+            estudios de television y eventos</strong>.
             Nuestro objetivo es brindar un entorno de trabajo limpio, seguro y saludable
             para ayudar a fomentar la comodidad y productividad.
 

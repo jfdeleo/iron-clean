@@ -1,16 +1,16 @@
 const eventTypesStyles = `
   .event-types {
     width: 100%;
-    padding: 12px 20px 14px;
+    padding: clamp(18px, 2vw, 44px) clamp(20px, 2.8vw, 64px) clamp(20px, 2.2vw, 48px);
     box-sizing: border-box;
-    background: #fff;
+    background: #f4f6fa;
     color: #164b70;
     font-family: Arial, Helvetica, sans-serif;
   }
 
   .event-types__title {
-    margin: 0 0 12px;
-    font-size: 11px;
+    margin: 0 0 clamp(14px, 1.6vw, 34px);
+    font-size: clamp(13px, 1.5vw, 28px);
     line-height: 1.2;
     font-weight: 700;
     text-transform: uppercase;
@@ -20,7 +20,7 @@ const eventTypesStyles = `
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     align-items: start;
-    gap: 8px;
+    gap: clamp(8px, 1vw, 24px);
   }
 
   .event-types__item {
@@ -28,14 +28,14 @@ const eventTypesStyles = `
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 7px;
+    gap: clamp(10px, 1.1vw, 24px);
     min-width: 0;
     text-align: center;
   }
 
   .event-types__icon {
-    width: 34px;
-    height: 34px;
+    width: clamp(38px, 4.4vw, 100px);
+    height: clamp(38px, 4.4vw, 100px);
     flex-shrink: 0;
     fill: none;
     stroke: #164b70;
@@ -48,15 +48,25 @@ const eventTypesStyles = `
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 10px;
+    font-size: clamp(11px, 1.2vw, 24px);
     line-height: 1.35;
     font-weight: 500;
+    color: #123a5c;
   }
 
   @media (max-width: 700px) {
     .event-types__list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      row-gap: 20px;
+      row-gap: 22px;
+    }
+
+    .event-types__icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .event-types__label {
+      font-size: 11px;
     }
   }
 
@@ -67,8 +77,8 @@ const eventTypesStyles = `
     }
 
     .event-types__icon {
-      width: 29px;
-      height: 29px;
+      width: 32px;
+      height: 32px;
     }
 
     .event-types__label {
