@@ -446,10 +446,6 @@ const Contacto = {
             </div>
       </div>
     
-        <div class="col-md-6 offset-md-3">
-                  <h1 style="text-align: center;">REVISAR DONDE QUEDA ESTO</h1>
-                  <div style="width: 7em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
-              </div>
 
     </div>
   `,
@@ -673,7 +669,7 @@ const app = createApp({
       ],
       dropdowns: [
         { name: 'Desinfección COVID-19',                          link: '#/covid-19' },
-        { name: 'Fotogaleria',                                    link: '#/fotogaleria' },
+        // { name: 'Fotogaleria',                                    link: '#/fotogaleria' },
         { name: 'HOGAR MARÍA LUISA - Vos también podes ayudar',  link: '#/hogar-maria-luisa' },
       ],
       eventos: [
