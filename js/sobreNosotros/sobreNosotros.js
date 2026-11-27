@@ -211,7 +211,7 @@ export default {
         },
         descripcion: {
             type: String,
-            default: 'Somos una empresa especializada en servicios de limpieza industrial, con años de experiencia en el mercado, brindando soluciones eficientes, seguras y sostenibles para sectores como el industrial, comercial y de infraestructura.',
+            default: 'Somos una empresa especializada en servicios de limpieza integral, con años de experiencia en el mercado, brindando soluciones eficientes, seguras y sostenibles para sectores como el comercial',
         },
         caracteristicas: {
             type: Array,

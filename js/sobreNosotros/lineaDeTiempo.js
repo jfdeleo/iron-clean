@@ -150,11 +150,11 @@ export default {
         hitos: {
             type: Array,
             default: () => [
-                { anio: 2010, descripcion: 'Inicio de operaciones' },
-                { anio: 2014, descripcion: 'Expansión de servicios' },
-                { anio: 2018, descripcion: 'Nuevos mercados y alianzas' },
-                { anio: 2021, descripcion: 'Certificaciones de calidad' },
-                { anio: 2024, descripcion: 'Seguimos creciendo' },
+                { anio: 2019, descripcion: 'Inicio de operaciones' },
+                { anio: 2022, descripcion: 'Expansión de servicios' },
+                { anio: 2023, descripcion: 'Nuevos mercados' },
+                { anio: 2026, descripcion: 'Seguimos creciendo' },
+
             ],
         },
         titulo: {

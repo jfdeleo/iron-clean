@@ -104,34 +104,32 @@ const Nosotros = {
   template: `<div class="container py-5" style="padding-top: 1% !important;padding-bottom: 0 !important;">
           <EventBanner image-src="img/imagenes-banners/banner-en-construccion.svg" 
           titulo="Comprometidos con un entorno más limpio y seguro"
-          descripcion="En Iron Clean SA  trabajamos para ofrecer soluciones de limpieza industrial que aportan valor, seguridad y sostenibilidad a nuestro clientes"
+          descripcion="En Iron Clean SA  trabajamos para ofrecer soluciones de limpieza integral que aportan valor, seguridad y sostenibilidad a nuestro clientes"
           
           titulo="Comprometidos con un entorno más limpio y seguro"
-          style="border-radius: 1.2rem;" />
-              <AboutSection
-              image-src="img/taza.png"
-              image-alt="Edificio de Iron Clean"
-              subtitulo="QUIÉNES SOMOS"
-              titulo="Más que limpieza, generamos confianza"
-              descripcion="Somos una empresa especializada en servicios de limpieza industrial, con años de experiencia en el mercado, brindando soluciones eficientes, seguras y sostenibles para sectores como el industrial, comercial y de infraestructura"
-              :caracteristicas="caracteristicas"
-            />
+ />
+            <div style="color:white;background:rgb(13,27,42);margin-bottom:1em;font-family:'Lato',sans-serif;">
+        <div class="container" style="padding:2em;">
+         
+          <p style="font-size: 1.7rem;margin-top: 3%;">Somos una empresa familiar especializada en servicios de limpieza integral, con más de cinco años de experiencia acompañando a empresas, instituciones, consorcios, espacios comerciales, eventos y organizaciones de distintos sectores. Desde nuestros inicios hemos construido una filosofía de trabajo basada en la responsabilidad, la dedicación y la cercanía con cada cliente, entendiendo que cada servicio representa una oportunidad para demostrar nuestro compromiso con la calidad y la confianza que depositan en nosotros.</p>
+            </div>
+          </div>
+          
+          
           <TimelineHistoria
               :hitos="historia"
               titulo="Un camino de crecimiento constante"
               subtitulo="NUESTRA HISTORIA"
          />
-        <cta-evento
-         fondo="#142C26"
-         titulo="Nuesto propósito"
-         texto="Contribuir a un mundo mas limpio, seguro y saludable, a través de servicios de limpieza industrial de alta calidad, con un fuerte compromiso con el medio ambiente y las personas"
-         style="border-radius: 1em;"
-          :beneficios="[
-            { icono: 'nest_eco_leaf',   texto: 'Cuidamos el entorno' },
-            { icono: 'groups',   texto: 'Valoramos a las personas', estilo: 'outlined' },
-            { icono: 'signal_cellular_alt', texto: 'Generamos un impacto positivo' , estilo: 'round' }
-          ]"
-         
+              <AboutSection
+              image-src="img/taza.png"
+              image-alt="Edificio de Iron Clean"
+              subtitulo="QUIÉNES SOMOS"
+              titulo="Más que limpieza, generamos confianza"
+              descripcion="Somos una empresa especializada en servicios de limpieza integral, con años de experiencia en el mercado, brindando soluciones eficientes, seguras y sostenibles para sectores como el comercial"
+              :caracteristicas="caracteristicas"
+            />
+
          ></cta-evento>
                   <carrousel
             :fotos="[
@@ -186,19 +184,19 @@ const NuestroEquipo = {
       :estadisticas="[
         {
           icono: 'groups',
-          numero: '+15',
+          numero: '+5',
           titulo: 'Años de experiencia',
           detalle: 'Acompañando a empresas\\nde todo el país'
         },
         {
           icono: 'apartment',
-          numero: '+500',
+          numero: '+30',
           titulo: 'Servicios mensuales',
           detalle: 'En oficinas, industrias\\ny grandes superficies'
         },
         {
           icono: 'star_border',
-          numero: '98%',
+          numero: '97%',
           titulo: 'Satisfacción del cliente',
           detalle: 'Basada en nuestro\\ncompromiso y calidad'
         },
@@ -212,7 +210,7 @@ const NuestroEquipo = {
     ></barra-estadisticas>
     </div>
     <nuestra-gente
-      imagen="img/taza.png"
+      imagen="img/nuestroEquipo/the-floor-diego.png"
       alt="Operario de Iron Clean limpiando un hall"
     ></nuestra-gente>
       <estructura-organizacion
@@ -223,17 +221,6 @@ const NuestroEquipo = {
             { imagen: './img/user.png',    titulo: 'Equipos Técnicos',  descripcion: 'Ejecución en sitio' }
           ]"
       ></estructura-organizacion>
-      <especialistas-grid
-      style="padding: 1% 2em 0px 2em;"
-          :items="[
-            { imagen: 'img/taza.png', icono: 'hub',               texto: 'Limpieza\\nCorporativa' },
-            { imagen: 'img/taza.png',  icono: 'factory',           texto: 'Limpieza\\nIndustrial' },
-            { imagen: 'img/taza.png',        icono: 'engineering',       texto: 'Mantenimiento\\nIntegral' },
-            { imagen: 'img/taza.png',            icono: 'groups',            texto: 'Logística\\nOperativa' },
-            { imagen: 'img/taza.png',          icono: 'supervisor_account', texto: 'Supervisión\\nTécnica' },
-            { imagen: 'img/taza.png',            icono: 'health_and_safety', texto: 'Seguridad\\ne Higiene' }
-          ]"
-      ></especialistas-grid>  
     <nuestros-valores
       imagen="img/taza.png"
       alt="Equipo de Iron Clean"
@@ -250,7 +237,7 @@ const NuestroEquipo = {
               imagen: 'img/taza.png',
               opinion: 'La profesionalidad del equipo de Iron Clean ha sido clave para mantener nuestras instalaciones operativas y seguras.',
               cargo: 'Gerente de Operaciones',
-              empresa: 'Empresa Industrial'
+              empresa: 'Empresa'
             },
             {
               imagen: 'img/taza.png',

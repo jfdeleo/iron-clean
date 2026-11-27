@@ -1,8 +1,7 @@
-
 const aboutSectionStyles = `
   .about-section {
     display: grid;
-    grid-template-columns: 1.15fr 0.95fr;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 0.8fr);
     align-items: center;
     gap: 3rem;
     width: 100%;
@@ -44,15 +43,15 @@ const aboutSectionStyles = `
   .about-section__features {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-    margin-top: 1.7rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
 
   .about-section__feature {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.65rem;
+    gap: 0.9rem;
     min-width: 0;
   }
 
@@ -60,8 +59,8 @@ const aboutSectionStyles = `
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: clamp(2.75rem, 4.5vw, 3.75rem);
+    height: clamp(2.75rem, 4.5vw, 3.75rem);
     color: #399e85;
   }
 
@@ -74,22 +73,28 @@ const aboutSectionStyles = `
   .about-section__feature-title {
     margin: 0;
     color: #172c46;
-    font-size: 0.95rem;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
     font-weight: 700;
     line-height: 1.3;
     white-space: pre-line;
+    overflow-wrap: break-word;
   }
 
+  /* La imagen ocupa toda la altura de la fila (se estira junto con el contenido)
+     y su ancho sale de la columna, así siempre acompaña al tamaño del componente. */
   .about-section__image-wrapper {
     position: relative;
+    align-self: stretch;
     width: 100%;
-    aspect-ratio: 1.22 / 1;
+    min-height: 15rem;
     overflow: hidden;
     border-radius: 14px;
     background: #edf1f4;
   }
 
   .about-section__image {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
@@ -110,11 +115,17 @@ const aboutSectionStyles = `
 
     .about-section__image-wrapper {
       grid-row: 1;
+      align-self: auto;
+      min-height: 0;
       aspect-ratio: 16 / 9;
     }
 
     .about-section__title {
       font-size: clamp(1.7rem, 6vw, 2.2rem);
+    }
+
+    .about-section__feature-title {
+      font-size: clamp(1rem, 3.2vw, 1.15rem);
     }
   }
 
@@ -127,8 +138,17 @@ const aboutSectionStyles = `
       gap: 0.75rem;
     }
 
+    .about-section__feature {
+      gap: 0.7rem;
+    }
+
+    .about-section__feature-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+
     .about-section__feature-title {
-      font-size: 0.82rem;
+      font-size: 0.95rem;
     }
   }
 `;
@@ -211,7 +231,7 @@ export default {
         },
         descripcion: {
             type: String,
-            default: 'Somos una empresa especializada en servicios de limpieza industrial, con años de experiencia en el mercado, brindando soluciones eficientes, seguras y sostenibles para sectores como el industrial, comercial y de infraestructura.',
+            default: 'Somos una empresa especializada en servicios de limpieza integral, con años de experiencia en el mercado, brindando soluciones eficientes, seguras y sostenibles para sectores como el comercial.',
         },
         caracteristicas: {
             type: Array,
@@ -232,11 +252,11 @@ export default {
     <section class="about-section">
 
       <div class="about-section__content" >
-        <p class="about-section__eyebrow">{{ subtitulo }}</p>
+        <p class="about-section__eyebrow" style="font-size: 1.2em;>{{ subtitulo }}</p>
 
         <h2 class="about-section__title">{{ titulo }}</h2>
 
-        <p class="about-section__description">{{ descripcion }}</p>
+        <p class="about-section__description" style="font-size: 1.5em !Important;">{{ descripcion }}</p>
 
         <div class="about-section__features">
           <div
@@ -250,7 +270,7 @@ export default {
               aria-hidden="true"
             ></div>
 
-            <h3 class="about-section__feature-title">
+            <h3 class="about-section__feature-title" >
               {{ feature.titulo }}
             </h3>
           </div>
