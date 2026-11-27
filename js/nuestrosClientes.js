@@ -58,27 +58,35 @@ const grillaStyles = `
 `;
 
 (function() {
-  if (document.getElementById('ic-grilla-clientes-styles')) return;
-  const tag = document.createElement('style');
-  tag.id = 'ic-grilla-clientes-styles';
-  tag.textContent = grillaStyles;
-  document.head.appendChild(tag);
+    if (document.getElementById('ic-grilla-clientes-styles')) return;
+    const tag = document.createElement('style');
+    tag.id = 'ic-grilla-clientes-styles';
+    tag.textContent = grillaStyles;
+    document.head.appendChild(tag);
 })();
 
 export default {
-  name: 'GrillaClientes',
-  props: {
-    titulo:   { type: String, default: ''  },
-    logos:    { type: Array,  required: true },
-    columnas: { type: Number, default: 5   },
-  },
-  computed: {
-    estiloItem() {
-      const pct = (100 / this.columnas) - 1;
-      return { width: `calc(${pct}% - 0.5rem)`, aspectRatio: '4/3' };
+    name: 'GrillaClientes',
+    props: {
+        titulo:   { type: String, default: ''  },
+        logos:    { type: Array,  required: true },
+        columnas: { type: Number, default: 5   },
+        // Multiplicador del tamaño de cada logo (y de su tarjeta).
+        // 1 = tamaño original, 1.75 = 75% más grande (default).
+        // Al agrandar las tarjetas entran menos por fila (con columnas=5 y 1.75 quedan 3 por fila).
+        escala:   { type: Number, default: 1.75 },
     },
-  },
-  template: `
+    computed: {
+        estiloItem() {
+            const pct = ((100 / this.columnas) - 1) * this.escala;
+            const rem = 0.5 * this.escala;
+            return {
+                width: `min(100%, calc(${pct}% - ${rem}rem))`,
+                aspectRatio: '4/3',
+            };
+        },
+    },
+    template: `
     <div class="grilla-clientes">
       <h2 v-if="titulo" class="grilla-clientes__titulo">{{ titulo }}</h2>
       <div class="grilla-clientes__grid">

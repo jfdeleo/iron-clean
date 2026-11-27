@@ -26,7 +26,7 @@ import nuestraGente from './nuestroEquipo/nuestraGente.js';
 import especialistasGrid from './nuestroEquipo/especialistasGrid.js';
 import nuestrosValores from './nuestroEquipo/nuestrosValores.js';
 import testimoniosClientes from './nuestroEquipo/testimoniosClientes.js';
-import certificacionesAlianzas from './nuestroEquipo/certificacionesAlianzas.js';
+
 
 
 
@@ -131,6 +131,31 @@ const Nosotros = {
             />
 
          ></cta-evento>
+                     <testimonios-clientes
+            style="
+                padding-top: 2%;
+                padding-bottom: 2%;
+            "
+          :testimonios="[
+            {
+              imagen: 'img/user.png',
+              opinion: 'La profesionalidad del equipo de Iron Clean ha sido clave para mantener nuestras instalaciones operativas y seguras.',
+              cargo: 'Gerente de Operaciones',
+              empresa: 'Empresa'
+            },
+            {
+              imagen: 'img/user.png',
+              opinion: 'Otro testimonio...',
+              cargo: 'Directora de Compras',
+              empresa: 'Otra Empresa'
+            }
+          ]"
+        ></testimonios-clientes>
+            <cta-evento titulo="¿Necesitas un partner estratégico para la gestion de tus instalaciones?"
+             texto="Nuestro equipo está listo para acompañar el crecimiento de tu organización con soluciones a medida"
+              fondo="#012849"
+              :beneficios="[]"
+             style="border-radius: 1em;"></cta-evento>
                   <carrousel
             :fotos="[
               './img/clientes/img (1).jpeg',
@@ -166,6 +191,7 @@ const Nosotros = {
             :visibles="6"
             :velocidad="60"            
           ></carrousel>
+          
         </div>
 `,
 };
@@ -222,60 +248,28 @@ const NuestroEquipo = {
           ]"
       ></estructura-organizacion>
     <nuestros-valores
-      imagen="img/taza.png"
+      imagen="img/nuestroEquipo/limpieza.png"
       alt="Equipo de Iron Clean"
     ></nuestros-valores>
     <div class="row g-4 px-5">
       <div class="col-lg-6">
-        <testimonios-clientes
-            style="
-                padding-top: 2%;
-                padding-bottom: 2%;
-            "
-          :testimonios="[
-            {
-              imagen: 'img/taza.png',
-              opinion: 'La profesionalidad del equipo de Iron Clean ha sido clave para mantener nuestras instalaciones operativas y seguras.',
-              cargo: 'Gerente de Operaciones',
-              empresa: 'Empresa'
-            },
-            {
-              imagen: 'img/taza.png',
-              opinion: 'Otro testimonio...',
-              cargo: 'Directora de Compras',
-              empresa: 'Otra Empresa'
-            }
-          ]"
-        ></testimonios-clientes>
       </div>
       <div class="col-lg-6">
-        <certificaciones-alianzas
-            style="
-                padding-top: 2%;
-                padding-bottom: 2%;
-            "
-          :imagenes="[
-            'img/nuestroEquipo/iso-9001.png',
-            'img/nuestroEquipo/iso-14001.png',
-            'img/nuestroEquipo/iso-45001.png',
-            'img/nuestroEquipo/sustentabilidad.png',
-            'img/nuestroEquipo/capacitacion-continua.png'
-          ]"
-        ></certificaciones-alianzas>
+
       </div>
     </div>
-    
-    
-    <cta-evento titulo="¿Necesitas un partner estratégico para la gestion de tus instalaciones?"
-     texto="Nuestro equipo está listo para acompañar el crecimiento de tu organización con soluciones a medida"
-      fondo="#012849"
-      :beneficios="[]"
-     style="border-radius: 1em;"></cta-evento>
+          <form-c-v
+         style="margin-top: 2em;"
+          destinatario="franc15deleo@gmail.com"
+          :whatsapp="true"
+          wanumero="5491160371192"
+        ></form-c-v>
+
     </div>
   `,
 };
 
-
+// TODO : HACER MAS GRANDE LOS ICONODSSSSSS
 const NuestrosClientes = {
   template: `<div class="container py-5">
         <div class="jumbotron">
@@ -284,7 +278,7 @@ const NuestrosClientes = {
                     <h1 style="text-align: center;">Nuestros Clientes</h1>
                     <div style="width: 10em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
                 <grilla-clientes
-                  :columnas="5"
+                  :columnas="9"
                   :logos="[
                       './img/clientes/img (1).jpeg',
                       './img/clientes/img (2).jpeg',
@@ -456,12 +450,7 @@ const Contacto = {
                   <h1 style="text-align: center;">REVISAR DONDE QUEDA ESTO</h1>
                   <div style="width: 7em !important;margin-left:auto;margin-right:auto;;height:5px;background:linear-gradient(90deg,rgb(240,192,64),rgb(24,95,165));border-radius:2px;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
               </div>
-      <form-c-v
-         style="margin-top: 2em;"
-          destinatario="franc15deleo@gmail.com"
-          :whatsapp="true"
-          wanumero="5491160371192"
-        ></form-c-v>
+
     </div>
   `,
 };
@@ -762,6 +751,5 @@ app.component('nuestraGente', nuestraGente);
 app.component('especialistasGrid', especialistasGrid);
 app.component('nuestrosValores', nuestrosValores);
 app.component('testimoniosClientes', testimoniosClientes);
-app.component('certificacionesAlianzas', certificacionesAlianzas);
 
 app.mount('#app');

@@ -28,17 +28,18 @@
 
     .nuestra-gente .nuestra-gente-grilla {
       display: grid;
-      grid-template-columns: 1fr 1.25fr .85fr;
+      /* La primera columna ahora coincide con el ancho de la imagen */
+      grid-template-columns: .75fr 1.25fr .85fr;
       gap: 2.2rem;
       align-items: stretch;
       width: 100%;
     }
 
-    /* Imagen al 75% de su columna */
+    /* Imagen */
     .nuestra-gente .nuestra-gente-media {
       position: relative;
       margin: 0;
-      width: 75%;
+      width: 100%;
       aspect-ratio: 1 / 1;
       min-height: 0;
       align-self: center;
@@ -176,14 +177,14 @@
     /* Tablet */
     @media (max-width: 991.98px) {
       .nuestra-gente .nuestra-gente-grilla {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: .75fr 1fr;
         gap: 1.8rem;
       }
 
       .nuestra-gente .nuestra-gente-media {
         grid-column: 1;
         grid-row: 1;
-        width: 75%;
+        width: 100%;
       }
 
       .nuestra-gente .nuestra-gente-contenido {
